@@ -1,1 +1,1 @@
-const
+const login = 42
