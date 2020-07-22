@@ -10,7 +10,7 @@ const userSchema = new Schema({
     githubId: String,
     googleId: String,
     linkedinId: String,
-    Articles : [{ type: Schema.Types.ObjectId, ref: "Article" }],
+    articles : [{ type: Schema.Types.ObjectId, ref: "Article" }],
     avatarUrl: String
     }, {
     timestamps: {
