@@ -17,4 +17,4 @@ const DbConnection = async () => {
 
 }
 
-module.exports = DbConnection
+module.exports = DbConnection;
