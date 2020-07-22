@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+class App extends Component {
+
+  state = {
+
+  }
+
+  render() {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +26,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )};
 }
 
 export default App;
