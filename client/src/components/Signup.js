@@ -65,10 +65,3 @@ class Signup extends Component {
 }
 
 export default Signup;
-
-//  // <>
-//         // {" "}
-//         {/* <h2>Login</h2>
-
-//       {/* </> */}
-//       );
