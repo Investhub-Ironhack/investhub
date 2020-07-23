@@ -57,25 +57,15 @@ app.use(
   })
 );
 
-<<<<<<< HEAD
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'hbs');
 // app.use(express.static(path.join(__dirname, 'public')));
 // app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
-=======
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "hbs");
-app.use(express.static(path.join(__dirname, "public")));
-app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
->>>>>>> 924b3e95609bca6938d922e0ebfd54ffd0e707b9
 
 // default value for title local
 app.locals.title = "InvestHub";
 
 app.use("/", require("./routes/index"));
-<<<<<<< HEAD
 app.use("/api/auth", require("./routes/auth"));
-=======
->>>>>>> 924b3e95609bca6938d922e0ebfd54ffd0e707b9
 
 module.exports = app;
