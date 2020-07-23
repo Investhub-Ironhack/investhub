@@ -1,27 +1,37 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+// import './App.css';
+import { Route } from "react-router-dom";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Logout from "./services/auth";
 
 class App extends Component {
-  state = {};
+  state = {
+    user: this.props.user,
+  };
+
+  setUser = (user) => {
+    this.setState({
+      user: user,
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Route exact path="/" render={() => <div>Home Page</div>} />
+
+        <Route
+          exact
+          path="/signup"
+          render={(props) => <Signup setUser={this.setUser} {...props} />}
+        />
+
+        <Route
+          exact
+          path="/login"
+          render={(props) => <Login setUser={this.setUser} {...props} />}
+        />
       </div>
     );
   }
