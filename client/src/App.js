@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Logout from "./services/auth";
+import NewArticle from "./components/NewArticle";
 
 class App extends Component {
   state = {
@@ -20,6 +21,8 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path="/" render={() => <div>Home Page</div>} />
+
+        <Route exact path="/article" component={NewArticle} />
 
         <Route
           exact
