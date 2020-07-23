@@ -10,7 +10,7 @@ router.post("/postArticle", (req, res) => {
       message:
         "The title should be at least 8 characters and maximum 200 characters!",
     });
-  } else if (!content || content < 10) {
+  } else if (!content || content.length < 200) {
     return res
       .status(400)
       .json({ message: "The content should be at least 500 characters." });
