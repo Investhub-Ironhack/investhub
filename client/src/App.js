@@ -5,6 +5,8 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Logout from "./services/auth";
 import NewArticle from "./components/NewArticle";
+import Stock from "./components/Stock";
+import Navbar from "./components/Navbar";
 
 class App extends Component {
   state = {
@@ -20,6 +22,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Navbar user={this.state.user} setUser={this.setUser} />
+
         <Route exact path="/" render={() => <div>Home Page</div>} />
 
         <Route exact path="/article" component={NewArticle} />
@@ -34,6 +38,12 @@ class App extends Component {
           exact
           path="/login"
           render={(props) => <Login setUser={this.setUser} {...props} />}
+        />
+
+        <Route
+          exact
+          path="/stock"
+          render={(props) => <Stock setUser={this.setUser} {...props} />}
         />
       </div>
     );
