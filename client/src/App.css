@@ -28,6 +28,27 @@
   color: #61dafb;
 }
 
+.navbar {
+  width: 100%;
+  background: #6c63ff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
