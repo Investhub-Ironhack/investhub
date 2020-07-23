@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Logout from "./services/auth";
+import NewArticle from "./components/NewArticle";
 import Stock from "./components/Stock";
 import Navbar from "./components/Navbar";
 
@@ -24,6 +25,8 @@ class App extends Component {
         <Navbar user={this.state.user} setUser={this.setUser} />
 
         <Route exact path="/" render={() => <div>Home Page</div>} />
+
+        <Route exact path="/article" component={NewArticle} />
 
         <Route
           exact

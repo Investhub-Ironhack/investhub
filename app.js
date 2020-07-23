@@ -67,5 +67,6 @@ app.locals.title = "InvestHub";
 
 app.use("/", require("./routes/index"));
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/articles", require("./routes/articles"));
 
 module.exports = app;
