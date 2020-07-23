@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Logout from "./services/auth";
+import Stock from "./components/Stock";
 
 class App extends Component {
   state = {
@@ -31,6 +32,12 @@ class App extends Component {
           exact
           path="/login"
           render={(props) => <Login setUser={this.setUser} {...props} />}
+        />
+
+        <Route
+          exact
+          path="/stock"
+          render={(props) => <Stock setUser={this.setUser} {...props} />}
         />
       </div>
     );
