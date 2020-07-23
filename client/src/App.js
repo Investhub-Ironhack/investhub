@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import Logout from "./services/auth";
 
 class App extends Component {
   state = {
