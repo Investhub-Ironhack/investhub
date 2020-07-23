@@ -49,6 +49,8 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
+  console.log(req.user);
+
   passport.authenticate("local", (err, user) => {
     if (err) {
       return res.status(500).json({ message: "Error while authenticating" });
@@ -62,6 +64,8 @@ router.post("/login", (req, res) => {
           .status(500)
           .json({ message: "Error while attempting to login" });
       }
+      console.log(req.user);
+
       return res.json(user);
     });
   })(req, res);
@@ -69,6 +73,7 @@ router.post("/login", (req, res) => {
 
 router.delete("/logout", (req, res) => {
   req.logout();
+
   res.json({ message: "Successful logout" });
 });
 
