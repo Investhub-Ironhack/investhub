@@ -4,6 +4,7 @@ import { signup } from "../services/auth";
 class Signup extends Component {
   state = {
     username: "",
+    email: "",
     password: "",
     message: "",
   };
@@ -19,13 +20,14 @@ class Signup extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const { username, password } = this.state;
+    const { username, email, password } = this.state;
 
-    signup(username, password).then((data) => {
+    signup(username, email, password).then((data) => {
       if (data.message) {
         this.setState({
           message: data.message,
           username: "",
+          email: "",
           password: "",
         });
       } else {
@@ -47,6 +49,15 @@ class Signup extends Component {
           value={this.state.username}
           onChange={this.handleChange}
           id="username"
+        />
+
+        <label htmlFor="email">E-Mail: </label>
+        <input
+          type="email"
+          name="email"
+          value={this.state.email}
+          onChange={this.handleChange}
+          id="email"
         />
 
         <label htmlFor="password">Password: </label>
