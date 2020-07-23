@@ -5,6 +5,8 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Logout from "./services/auth";
 import Profile from "./components/Profile";
+import NewArticle from "./components/NewArticle";
+import Stock from "./components/Stock";
 import Navbar from "./components/Navbar";
 
 class App extends Component {
@@ -25,6 +27,8 @@ class App extends Component {
 
         <Route exact path="/" render={() => <div>Home Page</div>} />
 
+        <Route exact path="/article" component={NewArticle} />
+
         <Route
           exact
           path="/signup"
@@ -41,6 +45,8 @@ class App extends Component {
           exact
           path="/profile"
           render={(props) => <Profile setUser={this.setUser} {...props} />}
+          path="/stock"
+          render={(props) => <Stock setUser={this.setUser} {...props} />}
         />
       </div>
     );

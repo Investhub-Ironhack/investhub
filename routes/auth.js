@@ -26,13 +26,11 @@ router.post("/signup", (req, res) => {
 
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
-      console.log(email);
       return User.create({
         username: username,
         email: email,
         password: hash,
       }).then((dbUser) => {
-        console.log(dbUser);
         req.login(dbUser, (err) => {
           if (err) {
             return res
@@ -49,8 +47,6 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res) => {
-  console.log(req.user);
-
   passport.authenticate("local", (err, user) => {
     if (err) {
       return res.status(500).json({ message: "Error while authenticating" });
@@ -64,7 +60,6 @@ router.post("/login", (req, res) => {
           .status(500)
           .json({ message: "Error while attempting to login" });
       }
-      console.log(req.user);
 
       return res.json(user);
     });
