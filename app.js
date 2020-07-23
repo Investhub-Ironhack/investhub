@@ -3,13 +3,8 @@ require("dotenv").config();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const express = require("express");
-<<<<<<< HEAD
 // const favicon = require('serve-favicon');
 // const hbs = require('hbs');
-=======
-const favicon = require("serve-favicon");
-const hbs = require("hbs");
->>>>>>> 924b3e95609bca6938d922e0ebfd54ffd0e707b9
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
