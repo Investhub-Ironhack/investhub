@@ -11,9 +11,12 @@ const handleLogout = (props) => {
 function Navbar(props) {
   return (
     <navbar>
+      <Link to="/">Home</Link>
       <Link to="/" onClick={() => handleLogout(props)}>
         Logout
       </Link>
+      <Link to="/login">login</Link>
+      <Link to="/signup">signup</Link>
     </navbar>
   );
 }

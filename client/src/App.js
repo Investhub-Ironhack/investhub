@@ -4,6 +4,7 @@ import { Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Logout from "./services/auth";
+import Profile from "./components/Profile";
 import NewArticle from "./components/NewArticle";
 import Stock from "./components/Stock";
 import Navbar from "./components/Navbar";
@@ -42,6 +43,8 @@ class App extends Component {
 
         <Route
           exact
+          path="/profile"
+          render={(props) => <Profile setUser={this.setUser} {...props} />}
           path="/stock"
           render={(props) => <Stock setUser={this.setUser} {...props} />}
         />
