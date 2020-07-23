@@ -1,18 +1,37 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import { Route, Redirect } from "react-router-dom";
-import Article from "./components/Article";
+// import './App.css';
+import { Route } from "react-router-dom";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Logout from "./services/auth";
 
 class App extends Component {
-  state = {};
+  state = {
+    user: this.props.user,
+  };
+
+  setUser = (user) => {
+    this.setState({
+      user: user,
+    });
+  };
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <Route exact path="/article" component={Article} />
-        </header>
+        <Route exact path="/" render={() => <div>Home Page</div>} />
+
+        <Route
+          exact
+          path="/signup"
+          render={(props) => <Signup setUser={this.setUser} {...props} />}
+        />
+
+        <Route
+          exact
+          path="/login"
+          render={(props) => <Login setUser={this.setUser} {...props} />}
+        />
       </div>
     );
   }
