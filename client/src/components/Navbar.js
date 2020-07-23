@@ -10,7 +10,7 @@ const handleLogout = (props) => {
 
 function Navbar(props) {
   return (
-    <navbar className="navbar">
+    <navbar>
       <Link to="/">Home</Link>
       <Link to="/" onClick={() => handleLogout(props)}>
         Logout
