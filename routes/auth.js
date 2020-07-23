@@ -26,13 +26,11 @@ router.post("/signup", (req, res) => {
 
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
-      console.log(email);
       return User.create({
         username: username,
         email: email,
         password: hash,
       }).then((dbUser) => {
-        console.log(dbUser);
         req.login(dbUser, (err) => {
           if (err) {
             return res
@@ -62,6 +60,7 @@ router.post("/login", (req, res) => {
           .status(500)
           .json({ message: "Error while attempting to login" });
       }
+
       return res.json(user);
     });
   })(req, res);
@@ -69,6 +68,7 @@ router.post("/login", (req, res) => {
 
 router.delete("/logout", (req, res) => {
   req.logout();
+
   res.json({ message: "Successful logout" });
 });
 
