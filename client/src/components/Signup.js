@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { login } from "../services/auth";
+import { signup } from "../services/auth";
 
 class Signup extends Component {
   state = {
@@ -21,7 +21,7 @@ class Signup extends Component {
 
     const { username, password } = this.state;
 
-    login(username, password).then((data) => {
+    signup(username, password).then((data) => {
       if (data.message) {
         this.setState({
           message: data.message,
