@@ -67,13 +67,33 @@ router.post("/login", (req, res) => {
   })(req, res);
 });
 
+router.get(
+  "/api/auth/linkedin",
+  passport.authenticate("linkedin"),
+  (req, res) => {
+    console.log("happening");
+  }
+);
+
+router.get(
+  "api/auth/linkedin/callback",
+  passport.authenticate("linkedin", {
+    successRedirect: "http://localhost:3000/article",
+    failureRedirect: "http://localhost:3000/login",
+  }),
+  function (req, res) {
+    // Successful authentication, redirect home.
+    res.redirect("/article");
+  }
+);
+
 router.delete("/logout", (req, res) => {
   req.logout();
 
   res.json({ message: "Successful logout" });
 });
 
-router.get("/loggedin", (req, res) => {
+router.get("/api/auth/loggedin", (req, res) => {
   res.json(req.user);
 });
 

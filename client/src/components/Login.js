@@ -51,6 +51,13 @@ class Login extends Component {
             id="username"
           />
 
+          <div>
+            <a href="/auth/linkedin"></a>
+            <a href="http://localhost:5555/api/auth/linkedin">
+              Login via LinkedIn
+            </a>
+          </div>
+
           <label htmlFor="password">Password: </label>
           <input
             type="password"

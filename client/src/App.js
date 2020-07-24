@@ -26,7 +26,7 @@ class App extends Component {
       <div className="App">
         <Navbar user={this.state.user} setUser={this.setUser} />
 
-        <Route exact path="/" render={() => <div>Home Page</div>} />
+        <Route exact path="/" render={() => <h1>Home Page</h1>} />
 
         <Route
           exact
@@ -51,6 +51,12 @@ class App extends Component {
           path="/login"
           render={(props) => <Login setUser={this.setUser} {...props} />}
         />
+
+        {/*     <Route
+          exact
+          path="/linkedin"
+          render={(props) => <Signup setUser={this.setUser} {...props} />}
+        /> */}
 
         <Route
           exact
