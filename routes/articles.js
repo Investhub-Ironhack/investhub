@@ -13,7 +13,7 @@ router.post("/postArticle", (req, res) => {
   } else if (!content || content.length < 200) {
     return res
       .status(400)
-      .json({ message: "The content should be at least 500 characters." });
+      .json({ message: "The content should be at least 200 characters." });
   } else if (!category) {
     return res.status(400).json({ message: "Please add a category." });
   } else {

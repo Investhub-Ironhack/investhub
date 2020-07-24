@@ -6,6 +6,7 @@ export default class NewArticle extends Component {
     title: "",
     content: "",
     category: "",
+    message: "",
   };
 
   handleChange = (event) => {
@@ -48,6 +49,7 @@ export default class NewArticle extends Component {
           />
 
           <select name="category" onChange={this.handleChange} id="category">
+            <option value="">Select a category</option>
             <option value="analysis">Analysis</option>
             <option value="stocks">Stocks</option>
             <option value="options">Options</option>
@@ -64,7 +66,7 @@ export default class NewArticle extends Component {
             id="content"
             placeholder="...and write some content."
           />
-
+          {this.state.message && <span>{this.state.message}</span>}
           <button type="submit"> Submit </button>
         </form>
       </div>
