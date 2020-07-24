@@ -41,6 +41,12 @@ class App extends Component {
           render={(props) => <Login setUser={this.setUser} {...props} />}
         />
 
+        {/*     <Route
+          exact
+          path="/linkedin"
+          render={(props) => <Signup setUser={this.setUser} {...props} />}
+        /> */}
+
         <Route
           exact
           path="/profile"
