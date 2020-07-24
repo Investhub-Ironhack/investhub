@@ -3,22 +3,30 @@ import React, { Component } from "react";
 class Stock extends Component {
   componentDidMount() {
     const script = document.createElement("script");
-    script.src =
-      "https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js";
-    script.async = true;
-    script.innerHTML = JSON.stringify({      
-  "width": 980,
-  "height": 610,
-  "symbol": "NASDAQ:AAPL",
-  "interval": "D",
-  "timezone": "Etc/UTC",
-  "theme": "light",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "allow_symbol_change": true,
-  "container_id": "tradingview_6037f"
+    script.src = "https://s3.tradingview.com/tv.js";
+    script.innerHTML = new window.TradingView.widget({
+      container_id: "technical-analysis",
+      width: 998,
+      height: 610,
+      symbol: "AAPL",
+      interval: "D",
+      timezone: "exchange",
+      theme: "light",
+      style: "1",
+      toolbar_bg: "#f1f3f6",
+      withdateranges: true,
+      hide_side_toolbar: false,
+      allow_symbol_change: true,
+      save_image: false,
+      studies: [
+        "ROC@tv-basicstudies",
+        "StochasticRSI@tv-basicstudies",
+        "MASimple@tv-basicstudies",
+      ],
+      show_popup_button: true,
+      popup_width: "1000",
+      popup_height: "650",
+      locale: "br",
     });
     document.getElementById("myContainer").appendChild(script);
   }
@@ -26,8 +34,18 @@ class Stock extends Component {
   render() {
     return (
       <div id="myContainer">
-        <div className="tradingview-widget-container">
-          <div className="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-container">
+          <div id="technical-analysis"></div>
+          <div class="tradingview-widget-copyright">
+            <a
+              href="https://br.tradingview.com/symbols/AAPL/"
+              rel="noopener"
+              target="_blank"
+            >
+              <span class="blue-text">Gráfico AAPL</span>
+            </a>{" "}
+            por TradingView
+          </div>
         </div>
       </div>
     );
