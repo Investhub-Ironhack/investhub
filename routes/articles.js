@@ -3,7 +3,7 @@ const Article = require("../models/Article");
 const router = express.Router();
 
 router.post("/postArticle", async (req, res) => {
-  const { title, content, category } = req.body;
+  const { title, content, category, author } = req.body;
   console.log("is it working?");
   if (!title || title.length < 8 || title.length > 200) {
     return res.status(400).json({
@@ -22,8 +22,10 @@ router.post("/postArticle", async (req, res) => {
         title: title,
         content: content,
         category: category,
+        author: author,
       });
       res.json(createdArticle);
+      // const pushedToUserModel = await
     } catch (err) {
       console.log(err);
     }
