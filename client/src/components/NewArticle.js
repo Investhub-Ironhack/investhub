@@ -66,6 +66,7 @@ export default class NewArticle extends Component {
             id="content"
             placeholder="...and write some content."
           />
+
           {this.state.message && <span>{this.state.message}</span>}
           <button type="submit"> Submit </button>
         </form>
