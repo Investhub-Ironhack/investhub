@@ -6,6 +6,7 @@ export default class NewArticle extends Component {
     title: "",
     content: "",
     category: "",
+    author: this.props.user,
     message: "",
   };
 
@@ -20,15 +21,16 @@ export default class NewArticle extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const { title, content, category } = this.state;
+    const { title, content, category, author } = this.state;
 
-    postArticle(title, content, category).then((data) => {
+    postArticle(title, content, category, author).then((data) => {
       if (data.message) {
         this.setState({
           message: data.message,
           title: "",
           content: "",
           category: "",
+          author: "",
         });
       }
     });

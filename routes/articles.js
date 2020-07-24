@@ -1,9 +1,10 @@
 const express = require("express");
 const Article = require("../models/Article");
 const router = express.Router();
+const User = require("../models/User");
 
-router.post("/postArticle", (req, res) => {
-  const { title, content, category } = req.body;
+router.post("/postArticle", async (req, res) => {
+  const { title, content, category, author } = req.body;
   console.log("is it working?");
   if (!title || title.length < 8 || title.length > 200) {
     return res.status(400).json({
@@ -17,16 +18,32 @@ router.post("/postArticle", (req, res) => {
   } else if (!category) {
     return res.status(400).json({ message: "Please add a category." });
   } else {
-    return Article.create({
-      title: title,
-      content: content,
-      category: category,
-    })
-      .then((response) => res.json(response))
-      .catch((err) => {
-        res.json(err);
+    try {
+      const createdArticle = await Article.create({
+        title: title,
+        content: content,
+        category: category,
+        author: author,
       });
+      console.log(createdArticle.author);
+      await User.findByIdAndUpdate(createdArticle.author, {
+        $push: { articles: createdArticle },
+      });
+      res.json(createdArticle);
+    } catch (err) {
+      console.log(err);
+    }
   }
+});
+
+router.get("/findarticle/:id", (req, res) => {
+  console.log(req);
+  User.findById(req.params.id)
+    .populate("articles")
+    .then((articles) => res.status(200).json(articles))
+    .catch((err) => {
+      res.json(err);
+    });
 });
 
 module.exports = router;

@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 import NewArticle from "./components/NewArticle";
 import Stock from "./components/Stock";
 import Navbar from "./components/Navbar";
+import UserPage from "./components/UserPage";
 
 class App extends Component {
   state = {
@@ -27,7 +28,17 @@ class App extends Component {
 
         <Route exact path="/" render={() => <h1>Home Page</h1>} />
 
-        <Route exact path="/article" component={NewArticle} />
+        <Route
+          exact
+          path="/article"
+          render={(props) => <NewArticle user={this.state.user} />}
+        />
+
+        <Route
+          exact
+          path="/userpage"
+          render={(props) => <UserPage user={this.state.user} />}
+        />
 
         <Route
           exact

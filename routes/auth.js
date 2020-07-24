@@ -30,6 +30,7 @@ router.post("/signup", (req, res) => {
         username: username,
         email: email,
         password: hash,
+        avatarUrl: "https://www.computerhope.com/jargon/g/guest-user.jpg",
       }).then((dbUser) => {
         req.login(dbUser, (err) => {
           if (err) {
