@@ -2,7 +2,7 @@ const express = require("express");
 const Article = require("../models/Article");
 const router = express.Router();
 
-router.post("/postArticle", (req, res) => {
+router.post("/postArticle", async (req, res) => {
   const { title, content, category } = req.body;
   console.log("is it working?");
   if (!title || title.length < 8 || title.length > 200) {
@@ -17,15 +17,16 @@ router.post("/postArticle", (req, res) => {
   } else if (!category) {
     return res.status(400).json({ message: "Please add a category." });
   } else {
-    return Article.create({
-      title: title,
-      content: content,
-      category: category,
-    })
-      .then((response) => res.json(response))
-      .catch((err) => {
-        res.json(err);
+    try {
+      const createdArticle = await Article.create({
+        title: title,
+        content: content,
+        category: category,
       });
+      res.json(createdArticle);
+    } catch (err) {
+      console.log(err);
+    }
   }
 });
 
