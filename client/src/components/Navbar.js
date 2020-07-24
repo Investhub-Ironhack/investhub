@@ -12,11 +12,13 @@ function Navbar(props) {
   return (
     <navbar>
       <Link to="/">Home</Link>
+      <Link to="/login">Login</Link>
+      <Link to="/signup">Signup</Link>
+      <Link to="/article">Articles</Link>
+      <Link to="/stock">Stocks</Link>
       <Link to="/" onClick={() => handleLogout(props)}>
         Logout
       </Link>
-      <Link to="/login">login</Link>
-      <Link to="/signup">signup</Link>
     </navbar>
   );
 }
