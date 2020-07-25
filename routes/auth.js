@@ -4,7 +4,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 
-router.post("/signup", (req, res) => {
+router.post("/api/auth/signup", (req, res) => {
   const { username, email, password } = req.body;
 
   if (!password || password.length < 8) {
@@ -47,7 +47,7 @@ router.post("/signup", (req, res) => {
     });
 });
 
-router.post("/login", (req, res) => {
+router.post("/api/auth/login", (req, res) => {
   passport.authenticate("local", (err, user) => {
     if (err) {
       return res.status(500).json({ message: "Error while authenticating" });
@@ -87,10 +87,10 @@ router.get(
   }
 );
 
-router.delete("/logout", (req, res) => {
+router.delete("/api/auth/logout", (req, res) => {
   req.logout();
-
   res.json({ message: "Successful logout" });
+  res.redirect("/");
 });
 
 router.get("/api/auth/loggedin", (req, res) => {
