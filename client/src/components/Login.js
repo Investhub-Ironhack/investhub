@@ -58,6 +58,13 @@ class Login extends Component {
             </a>
           </div>
 
+          <div>
+            <a href="/auth/github"></a>
+            <a href="http://localhost:5555/api/auth/github">
+              Login via Github
+            </a>
+          </div>
+
           <label htmlFor="password">Password: </label>
           <input
             type="password"
