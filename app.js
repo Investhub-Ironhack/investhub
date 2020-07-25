@@ -93,7 +93,7 @@ passport.use(
     {
       clientID: process.env.ID_GIT,
       clientSecret: process.env.SECRET_GIT,
-      callbackURL: `${process.env.AUTH_URL}auth/github/callback`,
+      callbackURL: `${process.env.AUTH_URL}/auth/github/callback`,
     },
     (accessToken, refreshToken, profile, done) => {
       // find a user with profile.id as githubId or create one
