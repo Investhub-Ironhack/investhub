@@ -4,7 +4,7 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 
-router.post("/signup", (req, res) => {
+router.post("/api/auth/signup", (req, res) => {
   const { username, email, password } = req.body;
 
   if (!password || password.length < 8) {
@@ -16,38 +16,43 @@ router.post("/signup", (req, res) => {
     return res.status(400).json({ message: "Your username cannot be empty" });
   }
 
-  User.findOne({ username: username })
-    .then((found) => {
-      if (found) {
-        return res
-          .status(400)
-          .json({ message: "This username is already taken" });
-      }
+  try {
+    User.findOne({ username: username })
+      .then((found) => {
+        if (found) {
+          return res
+            .status(400)
+            .json({ message: "This username is already taken" });
+        }
 
-      const salt = bcrypt.genSaltSync();
-      const hash = bcrypt.hashSync(password, salt);
-      return User.create({
-        username: username,
-        email: email,
-        password: hash,
-        avatarUrl: "https://www.computerhope.com/jargon/g/guest-user.jpg",
-      }).then((dbUser) => {
-        req.login(dbUser, (err) => {
-          if (err) {
-            return res
-              .status(500)
-              .json({ message: "Error while attempting to login" });
-          }
-          res.json(dbUser);
+        const salt = bcrypt.genSaltSync();
+        const hash = bcrypt.hashSync(password, salt);
+        return User.create({
+          username: username,
+          email: email,
+          password: hash,
+          avatarUrl: "https://www.computerhope.com/jargon/g/guest-user.jpg",
+        }).then((dbUser) => {
+          // passport - login the user
+          req.login(dbUser, (err) => {
+            if (err) {
+              return res
+                .status(500)
+                .json({ message: "Error while attempting to login" });
+            }
+            res.json(dbUser);
+          });
         });
+      })
+      .catch((err) => {
+        res.json(err);
       });
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+  } catch (error) {
+    console.error("Error router signup", error);
+  }
 });
 
-router.post("/login", (req, res) => {
+router.post("/api/auth/login", (req, res) => {
   passport.authenticate("local", (err, user) => {
     if (err) {
       return res.status(500).json({ message: "Error while authenticating" });
@@ -67,30 +72,38 @@ router.post("/login", (req, res) => {
   })(req, res);
 });
 
-router.get(
-  "/api/auth/linkedin",
-  passport.authenticate("linkedin"),
-  (req, res) => {
-    console.log("happening");
-  }
-);
+//linkedin routes
+
+router.get("/api/auth/linkedin", passport.authenticate("linkedin"));
 
 router.get(
   "api/auth/linkedin/callback",
   passport.authenticate("linkedin", {
-    successRedirect: "http://localhost:3000/article",
+    successRedirect: "http://localhost:3000/userPage",
     failureRedirect: "http://localhost:3000/login",
   }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect("/article");
+    res.redirect("http://localhost:3000/userPage");
   }
 );
 
-router.delete("/logout", (req, res) => {
-  req.logout();
+//Github Routes
 
+router.get("/api/auth/github", passport.authenticate("github"));
+
+router.get(
+  "/api/auth/github/callback",
+  passport.authenticate("github", {
+    successRedirect: "http://localhost:3000/userPage",
+    failureRedirect: "http://localhost:3000/login",
+  })
+);
+
+router.delete("/api/auth/logout", (req, res) => {
+  req.logout();
   res.json({ message: "Successful logout" });
+  res.redirect("/");
 });
 
 router.get("/api/auth/loggedin", (req, res) => {
