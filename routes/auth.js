@@ -16,35 +16,40 @@ router.post("/api/auth/signup", (req, res) => {
     return res.status(400).json({ message: "Your username cannot be empty" });
   }
 
-  User.findOne({ username: username })
-    .then((found) => {
-      if (found) {
-        return res
-          .status(400)
-          .json({ message: "This username is already taken" });
-      }
+  try {
+    User.findOne({ username: username })
+      .then((found) => {
+        if (found) {
+          return res
+            .status(400)
+            .json({ message: "This username is already taken" });
+        }
 
-      const salt = bcrypt.genSaltSync();
-      const hash = bcrypt.hashSync(password, salt);
-      return User.create({
-        username: username,
-        email: email,
-        password: hash,
-        avatarUrl: "https://www.computerhope.com/jargon/g/guest-user.jpg",
-      }).then((dbUser) => {
-        req.login(dbUser, (err) => {
-          if (err) {
-            return res
-              .status(500)
-              .json({ message: "Error while attempting to login" });
-          }
-          res.json(dbUser);
+        const salt = bcrypt.genSaltSync();
+        const hash = bcrypt.hashSync(password, salt);
+        return User.create({
+          username: username,
+          email: email,
+          password: hash,
+          avatarUrl: "https://www.computerhope.com/jargon/g/guest-user.jpg",
+        }).then((dbUser) => {
+          // passport - login the user
+          req.login(dbUser, (err) => {
+            if (err) {
+              return res
+                .status(500)
+                .json({ message: "Error while attempting to login" });
+            }
+            res.json(dbUser);
+          });
         });
+      })
+      .catch((err) => {
+        res.json(err);
       });
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+  } catch (error) {
+    console.error("Error router signup", error);
+  }
 });
 
 router.post("/api/auth/login", (req, res) => {
