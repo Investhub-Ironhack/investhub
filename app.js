@@ -91,8 +91,8 @@ const GithubStrategy = require("passport-github").Strategy;
 passport.use(
   new GithubStrategy(
     {
-      clientID: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+      clientID: process.env.ID_GIT,
+      clientSecret: process.env.SECRET_GIT,
       callbackURL: `${process.env.AUTH_URL}auth/github/callback`,
     },
     (accessToken, refreshToken, profile, done) => {
@@ -104,7 +104,11 @@ passport.use(
             done(null, found);
           } else {
             // no user with that githubId
-            return User.create({ githubId: profile.id }).then((dbUser) => {
+            return User.create({
+              githubId: profile.id,
+              displayName: profile.displayName,
+              avatarUrl: profile.photos[0].value,
+            }).then((dbUser) => {
               done(null, dbUser);
             });
           }
