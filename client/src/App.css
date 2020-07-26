@@ -46,7 +46,7 @@ body {
 
 .navbar {
   width: 100%;
-  background: #131722;
+  background: #3f3d56;
 }
 .container {
   width: 100%;
@@ -87,7 +87,7 @@ body {
 .footer {
   margin-top: 10px;
   width: 100%;
-  background: #131722;
+  background: #3f3d56;
   display: flex;
   justify-content: center;
   flex-direction: column;
