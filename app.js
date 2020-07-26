@@ -9,7 +9,6 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
 
-
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
 
@@ -223,8 +222,12 @@ app.use(
 //app.use(express.static(path.join(__dirname, "client/build")));
 //app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
+//Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
 }
 
 // default value for title local
