@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "build": "cd client && npm run build",
     "start": "node ./bin/www",
     "dev": "DEBUG=investhub:* nodemon ./bin/www --ignore './client'",
     "dev-windows": "nodemon ./bin/www",
