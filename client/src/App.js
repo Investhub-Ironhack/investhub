@@ -73,7 +73,7 @@ class App extends Component {
 
         <div className="footer">
           <img
-            className="navbar-logo"
+            className="footer-logo"
             src={investhubLogo}
             alt="Investhub's Logo"
           />
@@ -81,7 +81,7 @@ class App extends Component {
           <div class="footer-social-logos">
             <a href="http://github.com/">
               <img
-                className="githubLogo"
+                className="social-logo"
                 src={githubLogo}
                 alt="Linkedin's Logo"
               />
@@ -89,7 +89,7 @@ class App extends Component {
 
             <a href="https://www.instagram.com/">
               <img
-                className="instagramLogo"
+                className="social-logo"
                 src={instagramLogo}
                 alt="Linkedin's Logo"
               />
@@ -97,7 +97,7 @@ class App extends Component {
 
             <a href="http://facebook.com/">
               <img
-                className="facebookLogo"
+                className="social-logo"
                 src={facebookLogo}
                 alt="Facebook's Logo"
               />
@@ -105,7 +105,7 @@ class App extends Component {
 
             <a href="http://linkedin.com/">
               <img
-                className="linkedinLogo"
+                className="social-logo"
                 src={linkedinLogo}
                 alt="Linkedin's Logo"
               />
