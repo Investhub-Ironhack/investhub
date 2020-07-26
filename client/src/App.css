@@ -39,6 +39,7 @@ body {
 }
 
 .footer {
+  margin-top: 10px;
   width: 100%;
   background: #131722;
   display: flex;
