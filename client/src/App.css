@@ -38,6 +38,12 @@ body {
   color: #61dafb;
 }
 
+.navbar-logo {
+  width: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 .footer {
   margin-top: 10px;
   width: 100%;

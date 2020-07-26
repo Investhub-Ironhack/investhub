@@ -13,6 +13,7 @@ import githubLogo from "./images/foundation_social-github.png";
 import linkedinLogo from "./images/foundation_social-linkedin.png";
 import instagramLogo from "./images/typcn_social-instagram.png";
 import facebookLogo from "./images/foundation_social-facebook.png";
+import investhubLogo from "./images/investhub-logo.png";
 
 class App extends Component {
   state = {
@@ -71,6 +72,11 @@ class App extends Component {
         />
 
         <div className="footer">
+          <img
+            className="navbar-logo"
+            src={investhubLogo}
+            alt="Investhub's Logo"
+          />
           <p class="footer-social">Connect with us</p>
           <div class="footer-social-logos">
             <a href="http://github.com/">
