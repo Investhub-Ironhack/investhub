@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import './App.css';
+import "./App.css";
 import { Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
@@ -9,6 +9,10 @@ import NewArticle from "./components/NewArticle";
 import Stock from "./components/Stock";
 import Navbar from "./components/Navbar";
 import UserPage from "./components/UserPage";
+import githubLogo from "./images/foundation_social-github.png";
+import linkedinLogo from "./images/foundation_social-linkedin.png";
+import instagramLogo from "./images/typcn_social-instagram.png";
+import facebookLogo from "./images/foundation_social-facebook.png";
 
 class App extends Component {
   state = {
@@ -65,6 +69,15 @@ class App extends Component {
           path="/stock"
           render={(props) => <Stock setUser={this.setUser} {...props} />}
         />
+
+        <div className="footer">
+          <p class="footer-social">Connect with us</p>
+          <div class="footer-social-logos"></div>
+
+          <p class="footer-copyright">
+            2020© All Rights Reserved. Made in Berlin
+          </p>
+        </div>
       </div>
     );
   }
