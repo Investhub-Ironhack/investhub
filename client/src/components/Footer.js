@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import investhubLogo from "../images/investhub-logo.png";
 import githubLogo from "../images/foundation_social-github.png";
 import linkedinLogo from "../images/foundation_social-linkedin.png";

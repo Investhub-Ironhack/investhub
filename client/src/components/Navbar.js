@@ -20,38 +20,28 @@ function Navbar(props) {
             alt="Investhub's Logo"
           />
 
-          <div class="menu">
-            <Link className="btn btn-secundary" to="/">
-              Home
-            </Link>
+          <Link className="btn" to="/login">
+            Login
+          </Link>
+          <Link className="btn" to="/signup">
+            Signup
+          </Link>
+          <Link className="btn" to="/article">
+            Articles
+          </Link>
+          <Link className="btn" to="/stock">
+            Stocks
+          </Link>
 
-            <Link
-              className="btn btn-secundary"
-              to="/"
-              onClick={() => handleLogout(props)}
-            >
-              Logout
-            </Link>
-          </div>
-
-          <div class="menu">
-            <a class="btn" href="/auth/login">
-              Login
-            </a>
-            <a class="btn btn-secundary" href="/auth/signup">
-              Sign Up
-            </a>
-          </div>
+          <Link
+            className="btn btn-secundary"
+            to="/"
+            onClick={() => handleLogout(props)}
+          >
+            Logout
+          </Link>
         </div>
       </nav>
-      <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Signup</Link>
-      <Link to="/article">Articles</Link>
-      <Link to="/stock">Stocks</Link>
-      <Link to="/" onClick={() => handleLogout(props)}>
-        Logout
-      </Link>
     </navbar>
   );
 }
