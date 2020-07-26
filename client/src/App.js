@@ -72,10 +72,42 @@ class App extends Component {
 
         <div className="footer">
           <p class="footer-social">Connect with us</p>
-          <div class="footer-social-logos"></div>
+          <div class="footer-social-logos">
+            <a href="http://github.com/">
+              <img
+                className="githubLogo"
+                src={githubLogo}
+                alt="Linkedin's Logo"
+              />
+            </a>
+
+            <a href="https://www.instagram.com/">
+              <img
+                className="instagramLogo"
+                src={instagramLogo}
+                alt="Linkedin's Logo"
+              />
+            </a>
+
+            <a href="http://facebook.com/">
+              <img
+                className="facebookLogo"
+                src={facebookLogo}
+                alt="Facebook's Logo"
+              />
+            </a>
+
+            <a href="http://linkedin.com/">
+              <img
+                className="linkedinLogo"
+                src={linkedinLogo}
+                alt="Linkedin's Logo"
+              />
+            </a>
+          </div>
 
           <p class="footer-copyright">
-            2020© All Rights Reserved. Made in Berlin
+            2020 © All Rights Reserved. Made in Berlin
           </p>
         </div>
       </div>
