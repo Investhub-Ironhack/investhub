@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev": "DEBUG=investhub:* nodemon ./bin/www --ignore './client'",
     "dev-windows": "nodemon ./bin/www",
-    "heroku-postbuild": "cd client && yarn && yarn dev"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
