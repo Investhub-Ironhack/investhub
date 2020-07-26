@@ -28,6 +28,32 @@
   color: #61dafb;
 }
 
+.footer {
+  width: 100%;
+  background: #131722;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: static;
+  bottom: 0;
+}
+
+.footer-logo {
+  margin-top: 10px;
+  width: 60px;
+}
+
+.footer-social {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.footer-copyright {
+  color: #fff;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
