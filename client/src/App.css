@@ -44,6 +44,46 @@ body {
   margin-left: 10px;
 }
 
+.navbar {
+  width: 100%;
+  background: #131722;
+}
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-logo {
+  width: 40px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.menu {
+  display: flex;
+  margin: 0 15px;
+}
+.btn {
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 5px 10px;
+}
+.btn-secundary {
+  border: 1px solid #fff;
+  border-radius: 15px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .footer {
   margin-top: 10px;
   width: 100%;

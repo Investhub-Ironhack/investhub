@@ -29,6 +29,33 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <nav class="navbar">
+          <div class="container">
+            <img
+              className="navbar-logo"
+              src={investhubLogo}
+              alt="Investhub's Logo"
+            />
+
+            <div class="menu">
+              <a class="btn" href="/vacancies">
+                Dashboard
+              </a>
+              <a class="btn btn-secundary" href="/auth/logout">
+                Logout
+              </a>
+            </div>
+
+            <div class="menu">
+              <a class="btn" href="/auth/login">
+                Login
+              </a>
+              <a class="btn btn-secundary" href="/auth/signup">
+                Sign Up
+              </a>
+            </div>
+          </div>
+        </nav>
         <Navbar user={this.state.user} setUser={this.setUser} />
 
         <Route exact path="/" render={() => <h1>Home Page</h1>} />
