@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { findArticle } from "../services/articles";
+// import { findArticle } from "../services/articles";
 import axios from "axios";
 
 export default class UserPage extends Component {
