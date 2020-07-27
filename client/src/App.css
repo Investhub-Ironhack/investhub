@@ -40,8 +40,8 @@ body {
 
 .navbar-logo {
   width: 40px;
-  margin-top: 10px;
   margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .navbar {
@@ -61,11 +61,6 @@ body {
   flex-direction: column;
 }
 
-.navbar-logo {
-  width: 40px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
 .menu {
   display: flex;
   margin: 0 15px;
