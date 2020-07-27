@@ -45,7 +45,7 @@ class Login extends Component {
         <div className="login-page">
           <div>
             <form className="login-form" onSubmit={this.handleSubmit}>
-              <h2>Welcome Back!</h2>
+              <h1>Welcome Back!</h1>
               <label htmlFor="username">Username: </label>
               <input
                 type="text"
