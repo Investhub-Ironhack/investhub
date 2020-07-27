@@ -20,9 +20,6 @@ function Navbar(props) {
             alt="Investhub's Logo"
           />
 
-          <Link className="btn" to="/signup">
-            Signup
-          </Link>
           <Link className="btn" to="/article">
             Articles
           </Link>
@@ -34,6 +31,9 @@ function Navbar(props) {
             Login
           </Link>
 
+          <Link className="btn" to="/signup">
+            Signup
+          </Link>
           <Link
             className="btn btn-secundary"
             to="/"
