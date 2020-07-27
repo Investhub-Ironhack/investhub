@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import { findArticle } from "../services/articles";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default class UserPage extends Component {
   state = {
@@ -29,7 +30,7 @@ export default class UserPage extends Component {
         <img src={this.state.user.avatarUrl} />
         <h1>{console.log(this.state.articles)}</h1>
         {this.state.articles.map((article) => {
-          return <h1>{article.title}</h1>;
+          return <Link to={`/article/${article._id}`}>{article.title}</Link>;
         })}
       </>
     );

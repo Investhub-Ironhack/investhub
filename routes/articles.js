@@ -49,4 +49,14 @@ router.get("/findarticle/:id", (req, res) => {
     });
 });
 
+router.get("/findonearticle/:id", (req, res) => {
+  Article.findById(req.params.id)
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
 module.exports = router;
