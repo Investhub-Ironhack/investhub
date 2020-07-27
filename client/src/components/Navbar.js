@@ -11,7 +11,7 @@ const handleLogout = (props) => {
 
 function Navbar(props) {
   return (
-    <navbar>
+    <>
       <nav className="navbar">
         <div className="container">
           <img
@@ -43,7 +43,7 @@ function Navbar(props) {
           </Link>
         </div>
       </nav>
-    </navbar>
+    </>
   );
 }
 
