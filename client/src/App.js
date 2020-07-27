@@ -10,6 +10,9 @@ import Stock from "./components/Stock";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import UserPage from "./components/UserPage";
+import ArticleView from "./components/ArticleView";
+import ArticleEdit from "./components/ArticleEdit";
+// import Article from "../../models/Article";
 
 class App extends Component {
   state = {
@@ -37,6 +40,18 @@ class App extends Component {
           path="/userpage/:id"
           render={(props) => <UserPage {...props} user={this.state.user} />}
         />
+        <Route
+          exact
+          path="/article/:id"
+          render={(props) => <ArticleView {...props} user={this.state.user} />}
+        />
+
+        <Route
+          exact
+          path="/article/edit/:id"
+          render={(props) => <ArticleEdit {...props} />}
+        />
+
         <Route
           exact
           path="/signup"
