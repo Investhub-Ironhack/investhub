@@ -200,7 +200,7 @@ body {
 
 .signin-page button {
   width: 80%;
-  background: #6c63ff;
+  background: #2197f3;
   color: white;
   width: 80%;
   border: 0;
@@ -234,7 +234,7 @@ body {
   outline: 0;
   width: 80%;
   border: 2px solid;
-  border-color: #6c63ff;
+  border-color: #2197f3;
   margin: 0 0 2px;
   margin-top: 8px;
   padding: 4px;
@@ -260,13 +260,13 @@ body {
 }
 
 .signin-page p {
-  color: #6c63ff;
+  color: #2197f3;
   font-size: 16px;
 }
 
 .signin-page h3,
 h1 {
-  color: #6c63ff;
+  color: #2197f3;
 }
 
 .footer-logo {
