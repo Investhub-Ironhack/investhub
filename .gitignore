@@ -6,7 +6,6 @@ npm-debug.log
 
 # Environment Variables should NEVER be published
 .env
-client/build
 package-lock.json
 yarn.lock
 yarn.error
