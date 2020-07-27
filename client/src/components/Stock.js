@@ -34,15 +34,15 @@ class Stock extends Component {
   render() {
     return (
       <div id="myContainer">
-        <div class="tradingview-widget-container">
+        <div className="tradingview-widget-container">
           <div id="technical-analysis"></div>
-          <div class="tradingview-widget-copyright">
+          <div className="tradingview-widget-copyright">
             <a
               href="https://br.tradingview.com/symbols/AAPL/"
-              rel="noopener"
+              rel="noopener noreferrer"
               target="_blank"
             >
-              <span class="blue-text">Gráfico AAPL</span>
+              <span className="blue-text">Gráfico AAPL</span>
             </a>{" "}
             por TradingView
           </div>
