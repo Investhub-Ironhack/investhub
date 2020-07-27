@@ -14,11 +14,13 @@ function Navbar(props) {
     <>
       <nav className="navbar">
         <div className="container">
-          <img
-            className="navbar-logo"
-            src={investhubLogo}
-            alt="Investhub's Logo"
-          />
+          <a href="/">
+            <img
+              className="navbar-logo"
+              src={investhubLogo}
+              alt="Investhub's Logo"
+            />
+          </a>
 
           <Link className="btn" to="/article">
             Articles
