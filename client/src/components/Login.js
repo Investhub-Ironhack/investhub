@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { login } from "../services/auth";
+import githubLogoColor from "../images/github_color.png";
+import linkedinLogoColor from "../images/linkedin_color.png";
 
 class Login extends Component {
   state = {
@@ -76,12 +78,22 @@ class Login extends Component {
           <div className="social-signin">
             <p>Or log in with your social account</p>
             <div>
+              <img
+                className="social-logo"
+                src={linkedinLogoColor}
+                alt="Linkedin's Logo"
+              />
               <a href="http://localhost:5555/api/auth/linkedin">
                 Login via LinkedIn
               </a>
             </div>
 
             <div>
+              <img
+                className="social-logo"
+                src={githubLogoColor}
+                alt="Linkedin's Logo"
+              />
               <a href="http://localhost:5555/api/auth/github">
                 Login via Github
               </a>
