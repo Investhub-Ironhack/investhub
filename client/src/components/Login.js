@@ -68,7 +68,7 @@ class Login extends Component {
 
               <p className="message">
                 Don't have an account?{" "}
-                <a href="/auth/signup">
+                <a href="/signup">
                   <u>Sign up!</u>
                 </a>
               </p>

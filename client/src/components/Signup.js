@@ -80,7 +80,7 @@ class Signup extends Component {
           </form>
           <p class="message">
             Already have an account?{" "}
-            <a href="/auth/login">
+            <a href="/login">
               <u>Sign in!</u>
             </a>
           </p>
