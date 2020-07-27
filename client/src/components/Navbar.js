@@ -12,8 +12,8 @@ const handleLogout = (props) => {
 function Navbar(props) {
   return (
     <navbar>
-      <nav class="navbar">
-        <div class="container">
+      <nav className="navbar">
+        <div className="container">
           <img
             className="navbar-logo"
             src={investhubLogo}

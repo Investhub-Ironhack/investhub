@@ -24,8 +24,8 @@ class Footer extends Component {
           src={investhubLogo}
           alt="Investhub's Logo"
         />
-        <p class="footer-social">Connect with us</p>
-        <div class="footer-social-logos">
+        <p className="footer-social">Connect with us</p>
+        <div className="footer-social-logos">
           <a href="http://github.com/">
             <img
               className="social-logo"
@@ -59,7 +59,7 @@ class Footer extends Component {
           </a>
         </div>
 
-        <p class="footer-copyright">
+        <p className="footer-copyright">
           2020 © All Rights Reserved. Made in Berlin
         </p>
       </div>
