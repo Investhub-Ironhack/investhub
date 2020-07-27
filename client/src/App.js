@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-import Logout from "./services/auth";
+// import Logout from "./services/auth";
 import Profile from "./components/Profile";
 import NewArticle from "./components/NewArticle";
 import Stock from "./components/Stock";
