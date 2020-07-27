@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/vipavani/code/investhub/package.json: Unexpected token } in JSON at position 434
+  SyntaxError: /home/vipavani/code/investhub/package.json: Unexpected string in JSON at position 168
       at JSON.parse (<anonymous>)
       at /home/vipavani/.nvm/versions/node/v14.3.0/lib/node_modules/yarn/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -28,15 +28,14 @@ npm manifest:
     "private": true,
     "scripts": {
       "build": "cd client && npm run build",
-      "start": "concurrently \"cd client && PORT=3000 yarn start\" \"node ./bin/www\"",
+      "start": "concurrently \"node ./bin/www"" \"cd client && npm run start\"",
       "dev": "DEBUG=investhub:* nodemon ./bin/www --ignore './client'",
       "dev-windows": "nodemon ./bin/www",
-      "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+      "heroku-postbuild": "cd client && npm install && npm run build"
     },
     "dependencies": {
       "bcrypt": "^5.0.0",
       "body-parser": "^1.18.3",
-      "concurrently": "^5.2.0",
       "connect-flash": "^0.1.1",
       "connect-mongo": "^3.2.0",
       "cookie-parser": "^1.4.3",
