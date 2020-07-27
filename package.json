@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"cd client && npm run start\" \"node ./bin/www\"",
-    "build": "cd client && npm run build",
     "dev": "DEBUG=investhub:* nodemon ./bin/www --ignore './client'",
     "dev-windows": "nodemon ./bin/www",
     "heroku-postbuild": "cd client && npm install && npm run build"
