@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+* {
+  text-decoration: none;
+}
+
 body {
   padding: 0;
   box-sizing: border-box;
@@ -40,6 +44,7 @@ body {
 
 .navbar-logo {
   width: 40px;
+  margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 10px;
 }
