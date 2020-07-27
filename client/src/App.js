@@ -72,6 +72,7 @@ class App extends Component {
           path="/stock"
           render={(props) => <Stock setUser={this.setUser} {...props} />}
         />
+
         <Footer user={this.state.user} setUser={this.setUser} />
       </div>
     );
