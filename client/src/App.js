@@ -37,8 +37,8 @@ class App extends Component {
 
         <Route
           exact
-          path="/userpage"
-          render={(props) => <UserPage user={this.state.user} />}
+          path="/userpage/:id"
+          render={(props) => <UserPage {...props} user={this.state.user} />}
         />
 
         <Route
