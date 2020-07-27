@@ -42,37 +42,49 @@ class Signup extends Component {
   render() {
     return (
       <>
-        <h2>Sign-Up</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="username">Username: </label>
-          <input
-            type="text"
-            name="username"
-            value={this.state.username}
-            onChange={this.handleChange}
-            id="username"
-          />
+        <div class="signin-page">
+          <form className="signin-form" onSubmit={this.handleSubmit}>
+            <h1>Sign Up</h1>
+            <h3>Create your free account!</h3>
+            <label htmlFor="username">Username: </label>
+            <input
+              className="input-text"
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={this.handleChange}
+              id="username"
+            />
 
-          <label htmlFor="email">E-Mail: </label>
-          <input
-            type="email"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-            id="email"
-          />
+            <label htmlFor="email">E-Mail: </label>
+            <input
+              className="input-text"
+              type="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              id="email"
+            />
 
-          <label htmlFor="password">Password: </label>
-          <input
-            type="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-            id="password"
-          />
-          {this.state.message && <div>{this.state.message}</div>}
-          <button type="submit">Login</button>
-        </form>
+            <label htmlFor="password">Password: </label>
+            <input
+              className="input-text"
+              type="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              id="password"
+            />
+            {this.state.message && <div>{this.state.message}</div>}
+            <button type="submit">Login</button>
+          </form>
+          <p class="message">
+            Already have an account?{" "}
+            <a href="/auth/login">
+              <u>Sign in!</u>
+            </a>
+          </p>
+        </div>
       </>
     );
   }
