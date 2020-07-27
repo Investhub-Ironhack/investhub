@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+}
+
 .App {
   text-align: center;
 }
@@ -26,6 +36,39 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.navbar-logo {
+  width: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.footer {
+  margin-top: 10px;
+  width: 100%;
+  background: #131722;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: static;
+  bottom: 0;
+}
+
+.footer-logo {
+  margin-top: 10px;
+  width: 40px;
+}
+
+.footer-social {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.footer-copyright {
+  color: #fff;
 }
 
 @keyframes App-logo-spin {
