@@ -26,47 +26,37 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar user={this.state.user} setUser={this.setUser} />
-
         <Route exact path="/" render={() => <h1>Home Page</h1>} />
-
         <Route
           exact
           path="/article"
           render={(props) => <NewArticle user={this.state.user} />}
         />
-
         <Route
           exact
           path="/userpage/:id"
           render={(props) => <UserPage {...props} user={this.state.user} />}
         />
-
         <Route
           exact
           path="/signup"
           render={(props) => <Signup setUser={this.setUser} {...props} />}
         />
-
         <Route
           exact
           path="/login"
           render={(props) => <Login setUser={this.setUser} {...props} />}
         />
-
-        {/*     <Route
-          exact
-          path="/linkedin"
-          render={(props) => <Signup setUser={this.setUser} {...props} />}
-        /> */}
-
         <Route
           exact
           path="/profile"
           render={(props) => <Profile setUser={this.setUser} {...props} />}
+        />
+        <Route
+          exact
           path="/stock"
           render={(props) => <Stock setUser={this.setUser} {...props} />}
         />
-
         <Footer user={this.state.user} setUser={this.setUser} />
       </div>
     );

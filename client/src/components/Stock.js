@@ -39,7 +39,7 @@ class Stock extends Component {
           <div className="tradingview-widget-copyright">
             <a
               href="https://br.tradingview.com/symbols/AAPL/"
-              rel="noopener"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <span className="blue-text">Gráfico AAPL</span>
