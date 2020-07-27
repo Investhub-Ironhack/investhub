@@ -41,10 +41,7 @@ class Stock extends Component {
               href="https://br.tradingview.com/symbols/AAPL/"
               rel="noopener noreferrer"
               target="_blank"
-            >
-              <span className="blue-text">Gráfico AAPL</span>
-            </a>{" "}
-            por TradingView
+            ></a>
           </div>
         </div>
       </div>

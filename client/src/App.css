@@ -51,7 +51,7 @@ body {
 
 .navbar {
   width: 100%;
-  background: #3f3d56;
+  background: #2197f3;
 }
 .container {
   width: 100%;
@@ -85,10 +85,73 @@ body {
   margin-bottom: 20px;
 }
 
+.login-page {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 342px;
+  height: 600px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 15px auto;
+}
+
+.login-page p {
+  color: #2197f3;
+  font-size: 16px;
+}
+
+.card-item-name {
+  font-size: 1.1rem;
+  color: #2197f3;
+}
+
+.login-page h2 {
+  color: #2197f3;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.login-form input {
+  background: #f2f2f2;
+  border-radius: 5px;
+  width: 80%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.login-form button {
+  width: 80%;
+  background: #3ca767;
+  color: white;
+  width: 80%;
+  border: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 16px;
+  text-align: center;
+}
+
 .footer {
   margin-top: 10px;
   width: 100%;
-  background: #3f3d56;
+  background: #2197f3;
   display: flex;
   justify-content: center;
   flex-direction: column;
