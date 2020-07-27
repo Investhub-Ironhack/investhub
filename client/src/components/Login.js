@@ -1,4 +1,4 @@
-import React, { Component, Form, Button, Alert } from "react";
+import React, { Component } from "react";
 import { login } from "../services/auth";
 
 class Login extends Component {
@@ -51,20 +51,6 @@ class Login extends Component {
             id="username"
           />
 
-          <div>
-            <a href="/auth/linkedin"></a>
-            <a href="http://localhost:5555/api/auth/linkedin">
-              Login via LinkedIn
-            </a>
-          </div>
-
-          <div>
-            <a href="/auth/github"></a>
-            <a href="http://localhost:5555/api/auth/github">
-              Login via Github
-            </a>
-          </div>
-
           <label htmlFor="password">Password: </label>
           <input
             type="password"
@@ -75,6 +61,16 @@ class Login extends Component {
           />
           {this.state.message && <div>{this.state.message}</div>}
           <button type="submit">Login</button>
+
+          <div>
+            <a href="http://localhost:5555/api/auth/linkedin">
+              Login via LinkedIn
+            </a>
+          </div>
+
+          <div>
+            <a href="http://localhost:5555/api/auth/github">Login via Github</a>
+          </div>
         </form>
       </>
     );

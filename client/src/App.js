@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-// import './App.css';
+import "./App.css";
 import { Route } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-import Logout from "./services/auth";
+// import Logout from "./services/auth";
 import Profile from "./components/Profile";
 import NewArticle from "./components/NewArticle";
 import Stock from "./components/Stock";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import UserPage from "./components/UserPage";
 
 class App extends Component {
@@ -65,6 +66,8 @@ class App extends Component {
           path="/stock"
           render={(props) => <Stock setUser={this.setUser} {...props} />}
         />
+
+        <Footer user={this.state.user} setUser={this.setUser} />
       </div>
     );
   }

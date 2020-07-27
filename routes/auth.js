@@ -103,7 +103,6 @@ router.get(
 router.delete("/api/auth/logout", (req, res) => {
   req.logout();
   res.json({ message: "Successful logout" });
-  res.redirect("/");
 });
 
 router.get("/api/auth/loggedin", (req, res) => {
