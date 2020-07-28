@@ -25,7 +25,7 @@ router.post("/postArticle", async (req, res) => {
         category: category,
         author: author,
       });
-      console.log(createdArticle.author);
+
       await User.findByIdAndUpdate(createdArticle.author, {
         $push: { articles: createdArticle },
       });
@@ -40,7 +40,6 @@ router.get("/findarticle", (req, res) => {
   Article.find()
     .populate("author")
     .then((response) => {
-      console.log(response);
       res.status(200).json(response);
     })
     .catch((err) => {
@@ -50,11 +49,9 @@ router.get("/findarticle", (req, res) => {
 });
 
 router.get("/findarticle/:id", (req, res) => {
-  console.log(req);
   User.findById(req.params.id)
     .populate("articles")
     .then((articles) => {
-      console.log(articles);
       res.status(200).json(articles);
     })
     .catch((err) => {

@@ -13,7 +13,6 @@ export default class ArticleEdit extends Component {
     axios
       .get(`/api/articles/findonearticle/${this.props.match.params.id}`)
       .then((response) => {
-        console.log(response.data);
         this.setState({
           article: response.data,
         });
@@ -46,17 +45,24 @@ export default class ArticleEdit extends Component {
   render() {
     return (
       <>
-        <h1>{this.state.article.title}</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="content"
-            value={this.state.content}
-            onChange={this.handleChange}
-            id="content"
-          />
-          <button type="submit">Save</button>
-        </form>
+        <div class-name="edit">
+          <div className="article-head">
+            <h1 className="feed-title">{this.state.article.title}</h1>
+          </div>
+          <form className="article-form" onSubmit={this.handleSubmit}>
+            <textarea
+              className="article-field"
+              type="text"
+              name="content"
+              value={this.state.content}
+              onChange={this.handleChange}
+              id="content"
+            />
+            <button className="fork-button" type="submit">
+              Save
+            </button>
+          </form>
+        </div>
       </>
     );
   }
