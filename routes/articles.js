@@ -36,6 +36,19 @@ router.post("/postArticle", async (req, res) => {
   }
 });
 
+router.get("/findarticle", (req, res) => {
+  Article.find()
+    .populate("author")
+    .then((response) => {
+      console.log(response);
+      res.status(200).json(response);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json(err);
+    });
+});
+
 router.get("/findarticle/:id", (req, res) => {
   console.log(req);
   User.findById(req.params.id)
