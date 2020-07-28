@@ -32,4 +32,17 @@ const forkArticle = (article, user) => {
     });
 };
 
-export { postArticle, forkArticle };
+const updateArticle = (content, article) => {
+  return axios
+    .post(`/api/articles/updatearticle/${article._id}`, {
+      content: content,
+    })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      return err.response.data;
+    });
+};
+
+export { postArticle, forkArticle, updateArticle };

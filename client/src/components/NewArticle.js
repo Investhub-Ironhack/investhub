@@ -19,8 +19,6 @@ export default class NewArticle extends Component {
   };
 
   handleSubmit = (event) => {
-    event.preventDefault();
-
     const { title, content, category, author } = this.state;
 
     postArticle(title, content, category, author).then((data) => {
