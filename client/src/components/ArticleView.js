@@ -44,9 +44,20 @@ export default class ArticleView extends Component {
   render() {
     return (
       <>
-        <h1>{this.state.article.title}</h1>
-        <p>{this.state.article.content}</p>
-        <button onClick={this.handleFork}>Fork</button>
+        <div className="feed">
+          <div className="article-head">
+            <h1 classname="feed-title">{this.state.article.title}</h1>
+            <button className="fork-button" onClick={this.handleFork}>
+              Fork
+            </button>
+          </div>
+          <div className="article-box">
+            <p>{this.state.article.content}</p>
+          </div>
+          <button className="fork-button" onClick={this.handleFork}>
+            Fork
+          </button>
+        </div>
       </>
     );
   }
