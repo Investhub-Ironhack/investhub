@@ -59,4 +59,17 @@ router.get("/findonearticle/:id", (req, res) => {
     });
 });
 
+router.post("/updatearticle/:id", (req, res) => {
+  Article.findByIdAndUpdate(
+    { _id: req.params.id },
+    { content: req.body.content }
+  )
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
 module.exports = router;
