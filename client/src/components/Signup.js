@@ -76,9 +76,9 @@ class Signup extends Component {
               id="password"
             />
             {this.state.message && <div>{this.state.message}</div>}
-            <button type="submit">Sign Up</button>
           </form>
-          <p class="message">
+          <button type="submit">Sign Up</button>
+          <p className="message">
             Already have an account?{" "}
             <a href="/login">
               <u>Log in!</u>
