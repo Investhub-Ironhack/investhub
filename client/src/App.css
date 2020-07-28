@@ -148,6 +148,10 @@ body {
   text-align: center;
 }
 
+#technical-analysis iframe{
+  min-height: 800px;
+}
+
 .footer {
   margin-top: 10px;
   width: 100%;

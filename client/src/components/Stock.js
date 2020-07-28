@@ -5,46 +5,42 @@ class Stock extends Component {
     const script = document.createElement("script");
     script.src = "https://s3.tradingview.com/tv.js";
     script.innerHTML = new window.TradingView.widget({
-      container_id: "technical-analysis",
-      width: 998,
-      height: 610,
-      symbol: "AAPL",
-      interval: "D",
+      autosize: true,
+      symbol: "NASDAQ:AAPL",
+      interval: "5",
       timezone: "exchange",
       theme: "light",
       style: "1",
+      locale: "en",
       toolbar_bg: "#f1f3f6",
+      enable_publishing: false,
       withdateranges: true,
       hide_side_toolbar: false,
       allow_symbol_change: true,
-      save_image: false,
-      studies: [
-        "ROC@tv-basicstudies",
-        "StochasticRSI@tv-basicstudies",
-        "MASimple@tv-basicstudies",
-      ],
       show_popup_button: true,
       popup_width: "1000",
       popup_height: "650",
-      locale: "br",
+      container_id: "technical-analysis",
     });
     document.getElementById("myContainer").appendChild(script);
   }
 
   render() {
     return (
-      <div id="myContainer">
-        <div className="tradingview-widget-container">
-          <div id="technical-analysis"></div>
-          <div className="tradingview-widget-copyright">
-            <a
-              href="https://br.tradingview.com/symbols/AAPL/"
-              rel="noopener noreferrer"
-              target="_blank"
-            ></a>
+      <>
+        <div id="myContainer">
+          <div className="tradingview-widget-container">
+            <div id="technical-analysis"></div>
+            <div className="tradingview-widget-copyright">
+              <a
+                href="https://br.tradingview.com/symbols/AAPL/"
+                rel="noopener noreferrer"
+                target="_blank"
+              ></a>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
