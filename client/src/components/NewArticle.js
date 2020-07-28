@@ -38,7 +38,7 @@ export default class NewArticle extends Component {
     return (
       <div>
         <div className="new">
-          <h1>Write a new article !</h1>
+          <h1>Write a new article!</h1>
           <form className="form-add-article" onSubmit={this.handleSubmit}>
             <input
               className="input-text"
@@ -47,7 +47,7 @@ export default class NewArticle extends Component {
               value={this.state.title}
               onChange={this.handleChange}
               id="title"
-              placeholder="Add a title..."
+              placeholder="Title"
             />
 
             <select
@@ -72,13 +72,17 @@ export default class NewArticle extends Component {
               value={this.state.content}
               onChange={this.handleChange}
               id="content"
-              placeholder="...and write some content."
+              placeholder="Your Article:"
+              cols="10"
+              rows="20"
             />
 
             {this.state.message && <span>{this.state.message}</span>}
-            <button className="btn-apply" type="submit">
-              Submit
-            </button>
+            <div>
+              <button className="btn-primary" type="submit">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>

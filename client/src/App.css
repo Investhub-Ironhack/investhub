@@ -12,6 +12,14 @@ body {
   min-height: 100vh;
 }
 
+textarea {
+  border: 1px solid #6c63ff;
+  color: #444083;
+  border-radius: 5px;
+  resize: none;
+  font-family: Roboto;
+}
+
 .App {
   text-align: center;
 }
@@ -110,6 +118,26 @@ body {
   margin-top: 5px;
 }
 
+.btn-apply {
+  font-size: 1.1rem;
+  background: #00a713;
+  color: #fff;
+  padding: 5px 50px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.btn-primary {
+  font-size: 1.1rem;
+  background: #00a713;
+  color: #fff;
+  padding: 10px 75px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
 .login-page {
   display: flex;
   flex-direction: column;
@@ -198,6 +226,7 @@ body {
   border-radius: 5px;
   width: 100%;
   border: 0;
+  margin: 8px;
   padding: 10px;
   box-sizing: border-box;
   font-size: 1.1rem;
