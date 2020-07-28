@@ -13,7 +13,6 @@ export default class ArticleEdit extends Component {
     axios
       .get(`/api/articles/findonearticle/${this.props.match.params.id}`)
       .then((response) => {
-        console.log(response.data);
         this.setState({
           article: response.data,
         });

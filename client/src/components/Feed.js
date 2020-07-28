@@ -19,9 +19,7 @@ export default class Feed extends Component {
   render() {
     return (
       <>
-        <h1 className="feed-title">
-          Your daily articles and analysis {console.log(this.state.articles)}
-        </h1>
+        <h1 className="feed-title">Your daily articles and analysis</h1>
         {this.state.articles.map((article) => {
           return (
             <div class="feed-el">
