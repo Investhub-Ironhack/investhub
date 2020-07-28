@@ -161,6 +161,62 @@ body {
   bottom: 0;
 }
 
+.input-text {
+  background: #f2f2f2;
+  border-radius: 5px;
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  border-radius: 10px;
+}
+
+.signin-form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.radiobox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.role {
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  width: 80%;
+  margin: 5px;
+  padding: 10px;
+}
+.radio-input {
+  width: 50px;
+}
+
+.signin-page button {
+  width: 80%;
+  background: #3ca767;
+  color: white;
+  width: 80%;
+  border: 0;
+  margin: 15px 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 16px;
+  text-align: center;
+}
+
 .social-signin {
   display: flex;
   flex-direction: column;
@@ -178,7 +234,7 @@ body {
   outline: 0;
   width: 80%;
   border: 2px solid;
-  border-color: #6c63ff;
+  border-color: #2197f3;
   margin: 0 0 2px;
   margin-top: 8px;
   padding: 4px;
@@ -204,13 +260,13 @@ body {
 }
 
 .signin-page p {
-  color: #6c63ff;
+  color: #2197f3;
   font-size: 16px;
 }
 
 .signin-page h3,
 h1 {
-  color: #6c63ff;
+  color: #2197f3;
 }
 
 .footer-logo {
