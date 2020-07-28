@@ -2,13 +2,27 @@ import React, { Component } from "react";
 
 class Stock extends Component {
   componentDidMount() {
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/tv.js";
-    script.innerHTML = new window.TradingView.widget({
+    const symbolInfoScript = document.createElement("script");
+    symbolInfoScript.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js";
+    symbolInfoScript.innerHTML = JSON.stringify({
+      symbol: "FX:EURUSD",
+      width: "100%",
+      locale: "en",
+      colorTheme: "light",
+      isTransparent: true,
+    });
+    document
+      .getElementById("mySymbolInfoContainer")
+      .appendChild(symbolInfoScript);
+
+    const graphicscript = document.createElement("script");
+    graphicscript.src = "https://s3.tradingview.com/tv.js";
+    graphicscript.innerHTML = new window.TradingView.widget({
       autosize: true,
-      symbol: "NASDAQ:AAPL",
-      interval: "5",
-      timezone: "exchange",
+      symbol: "FX:EURUSD",
+      interval: "1",
+      timezone: "Europe/Berlin",
       theme: "light",
       style: "1",
       locale: "en",
@@ -22,25 +36,17 @@ class Stock extends Component {
       popup_height: "650",
       container_id: "technical-analysis",
     });
-    document.getElementById("myContainer").appendChild(script);
+    document.getElementById("myGraphContainer").appendChild(graphicscript);
   }
 
   render() {
     return (
-      <>
-        <div id="myContainer">
-          <div className="tradingview-widget-container">
-            <div id="technical-analysis"></div>
-            <div className="tradingview-widget-copyright">
-              <a
-                href="https://br.tradingview.com/symbols/AAPL/"
-                rel="noopener noreferrer"
-                target="_blank"
-              ></a>
-            </div>
-          </div>
+      <div className="stock">
+        <div id="mySymbolInfoContainer"></div>
+        <div id="myGraphContainer">
+          <div id="technical-analysis"></div>
         </div>
-      </>
+      </div>
     );
   }
 }

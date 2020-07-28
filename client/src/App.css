@@ -148,9 +148,27 @@ body {
   text-align: center;
 }
 
+.stock{
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+  align-content: center;
+  align-items: stretch;
+}
+
 #technical-analysis iframe{
   min-height: 800px;
+  max-width: 80%;
 }
+
+#mySymbolInfoContainer {
+  display: flex;
+  justify-content: center;
+	align-items: center;
+ 
+}
+
 
 .footer {
   margin-top: 10px;
