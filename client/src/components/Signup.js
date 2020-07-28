@@ -81,7 +81,7 @@ class Signup extends Component {
           <p class="message">
             Already have an account?{" "}
             <a href="/login">
-              <u>Sign in!</u>
+              <u>Log in!</u>
             </a>
           </p>
         </div>
