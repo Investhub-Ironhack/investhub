@@ -38,7 +38,7 @@ class Navbar extends Component {
           title: "ETH/USD",
         },
       ],
-      colorTheme: "light",
+      colorTheme: "dark",
       isTransparent: false,
       displayMode: "adaptive",
       locale: "en",

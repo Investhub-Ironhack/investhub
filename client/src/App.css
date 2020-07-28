@@ -51,7 +51,7 @@ body {
 
 .navbar {
   width: 100%;
-  background: #2197f3;
+  background: #3f3d56;
 }
 .container {
   width: 100%;
@@ -98,17 +98,17 @@ body {
 }
 
 .login-page p {
-  color: #2197f3;
+  color: #3f3d56;
   font-size: 16px;
 }
 
 .card-item-name {
   font-size: 1.1rem;
-  color: #2197f3;
+  color: #3f3d56;
 }
 
 .login-page h2 {
-  color: #2197f3;
+  color: #3f3d56;
 }
 
 .login-form {
@@ -151,7 +151,7 @@ body {
 .footer {
   margin-top: 10px;
   width: 100%;
-  background: #2197f3;
+  background: #3f3d56;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -234,7 +234,7 @@ body {
   outline: 0;
   width: 80%;
   border: 2px solid;
-  border-color: #2197f3;
+  border-color: #3f3d56;
   margin: 0 0 2px;
   margin-top: 8px;
   padding: 4px;
@@ -260,13 +260,13 @@ body {
 }
 
 .signin-page p {
-  color: #2197f3;
+  color: #3f3d56;
   font-size: 16px;
 }
 
 .signin-page h3,
 h1 {
-  color: #2197f3;
+  color: #3f3d56;
 }
 
 .footer-logo {
