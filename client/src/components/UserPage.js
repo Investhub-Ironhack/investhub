@@ -23,12 +23,10 @@ export default class UserPage extends Component {
   }
 
   render() {
-    console.log(this.state.articles);
     return (
       <>
         <h1>{this.state.user.username}</h1>
         <img src={this.state.user.avatarUrl} />
-        <h1>{console.log(this.state.articles)}</h1>
         {this.state.articles.map((article) => {
           return <Link to={`/article/${article._id}`}>{article.title}</Link>;
         })}

@@ -19,17 +19,20 @@ export default class Feed extends Component {
   render() {
     return (
       <>
-        <h1>
-          Your daily articles and analysis {console.log(this.state.articles)}
-        </h1>
+        <h1 className="feed-title">Your daily articles and analysis</h1>
         {this.state.articles.map((article) => {
           return (
-            <div>
-              <Link to={`/userpage/${article.author[0]._id}`}>
-                <img src={article.author[0].avatarUrl} />
+            <div class="feed-el">
+              <Link
+                className="feed-link"
+                to={`/userpage/${article.author[0]._id}`}
+              >
+                <img className="feed-image" src={article.author[0].avatarUrl} />
                 {article.author[0].username}
               </Link>
-              <Link to={`/article/${article._id}`}>{article.title}</Link>
+              <Link className="feed-article" to={`/article/${article._id}`}>
+                {article.title}
+              </Link>
             </div>
           );
         })}
