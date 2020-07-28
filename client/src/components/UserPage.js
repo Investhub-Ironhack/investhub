@@ -26,7 +26,7 @@ export default class UserPage extends Component {
     return (
       <>
         <h1>{this.state.user.username}</h1>
-        <img src={this.state.user.avatarUrl} alt="avatar " />
+        <img src={this.state.user.avatarUrl} alt="avatar" />
         {this.state.articles.map((article) => {
           return <Link to={`/article/${article._id}`}>{article.title}</Link>;
         })}

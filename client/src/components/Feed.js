@@ -20,7 +20,6 @@ export default class Feed extends Component {
     return (
       <>
         <h1 className="feed-title">Your daily articles and analysis</h1>
-        <form action=""></form>
         {this.state.articles.map((article) => {
           return (
             <div class="feed-el">
