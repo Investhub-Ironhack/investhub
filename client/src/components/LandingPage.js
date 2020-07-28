@@ -1,16 +1,21 @@
 <section class="main-content">
   <div class="hero-text">
-    <h1 class="hero-title">Finding an Internship made easy</h1>
-    <p class="text-hero-index">Gain work experience & kickstart your career at a cutting edge Startup,
-      Fortune 500 Company, or anything in between.
+    <h1 class="hero-title">Investing Made Easy</h1>
+    <p class="text-hero-index">
+      We have everything about Investing, Financial analysis & stocks in one
+      place for you.
     </p>
-    <a class="btn-primary" href="/auth/login">Start applying</a>
+    <a class="btn-primary" href="/auth/login">
+      Enter The Club
+    </a>
     <div class="btn-group">
-      <a class="btn-linked" href="/auth/signup">Start hiring</a>
-      <img class="btn-icon" src="/images/bi_arrow-right-square-fill.png" alt="">
+      <a class="btn-linked" href="/auth/signup">
+        Already a Member?
+      </a>
+      {/* <img class="btn-icon" src={deskImage} alt="" /> */}
     </div>
   </div>
-  <figure class="index-ilustration">
-    <img class="img-index" src="/images/undraw_feeling_proud_qne.svg" alt="">
-  </figure>
-</section>
+  <div class="index-ilustration">
+    <img class="img-index" src={manImage} alt="" />
+  </div>
+</section>;

@@ -33,33 +33,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar user={this.state.user} setUser={this.setUser} />
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <section class="main-content">
-              <div class="hero-text">
-                <h1 class="hero-title">Investing Made Easy</h1>
-                <p class="text-hero-index">
-                  We have everything about Investing, Financial analysis &
-                  stocks in one place for you.
-                </p>
-                <a class="btn-primary" href="/auth/login">
-                  Enter The Club
-                </a>
-                <div class="btn-group">
-                  <a class="btn-linked" href="/auth/signup">
-                    Already a Member?
-                  </a>
-                  {/* <img class="btn-icon" src={deskImage} alt="" /> */}
-                </div>
-              </div>
-              <div class="index-ilustration">
-                <img class="img-index" src={manImage} alt="" />
-              </div>
-            </section>
-          )}
-        />
+        <Route exact path="/" render={() => <div>Test</div>} />
 
         <Route
           exact
