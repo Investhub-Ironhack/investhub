@@ -7,7 +7,7 @@ class Stock extends Component {
       "https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js";
     symbolInfoScript.innerHTML = JSON.stringify({
       symbol: "FX:EURUSD",
-      width: "100%",
+      width: "80%",
       locale: "en",
       colorTheme: "light",
       isTransparent: true,
