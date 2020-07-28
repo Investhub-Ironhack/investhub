@@ -62,6 +62,10 @@ class Navbar extends Component {
               />
             </a>
 
+            <Link className="btn" to="/feed">
+              Feed
+            </Link>
+
             <Link className="btn" to="/article">
               Articles
             </Link>

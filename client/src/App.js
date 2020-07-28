@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import UserPage from "./components/UserPage";
 import ArticleView from "./components/ArticleView";
 import ArticleEdit from "./components/ArticleEdit";
+import Feed from "./components/Feed";
 // import Article from "../../models/Article";
 
 class App extends Component {
@@ -71,6 +72,12 @@ class App extends Component {
           exact
           path="/stock"
           render={(props) => <Stock setUser={this.setUser} {...props} />}
+        />
+
+        <Route
+          exact
+          path="/feed"
+          render={(props) => <Feed {...props} user={this.state.user} />}
         />
 
         <Footer user={this.state.user} setUser={this.setUser} />
