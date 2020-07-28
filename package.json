@@ -5,8 +5,7 @@
   "scripts": {
     "start": "concurrently \"cd client && npm run start\" \"node ./bin/www\"",
     "dev": "DEBUG=investhub:* nodemon ./bin/www --ignore './client'",
-    "dev-windows": "nodemon ./bin/www",
-      
+    "dev-windows": "nodemon ./bin/www"      
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
