@@ -81,18 +81,12 @@ export default class NewArticle extends Component {
             <Editor
               initialValue="<p></p>"
               init={{
-                icon:"jam",
+                icon: "jam",
                 height: 500,
                 skin: "fabric",
-                content_css: "document",
                 menubar: true,
-                resize: true,
-                plugins: [
-                  "advlist autolink lists link image",
-                  "charmap print preview anchor help",
-                  "searchreplace visualblocks code",
-                  "insertdatetime media table paste wordcount",
-                ],
+                resize: false,
+                plugins : 'advlist autolink link image lists charmap print preview help searchreplace visualblocks code insertdatetime media table paste wordcount',
                 toolbar:
                   "undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code",
               }}
