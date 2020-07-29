@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 // import Logout from "./services/auth";
@@ -43,13 +43,20 @@ class App extends Component {
         <Route
           exact
           path="/article"
-          render={(props) => <NewArticle user={this.state.user} />}
+          render={(props) => {
+            if (this.state.user) {
+              return <NewArticle user={this.state.user} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
         />
         <Route
           exact
           path="/userpage/:id"
           render={(props) => <UserPage {...props} user={this.state.user} />}
         />
+
         <Route
           exact
           path="/article/:id"
@@ -59,7 +66,13 @@ class App extends Component {
         <Route
           exact
           path="/article/edit/:id"
-          render={(props) => <ArticleEdit {...props} />}
+          render={(props) => {
+            if (this.state.user) {
+              return <ArticleEdit {...props} />;
+            } else {
+              return <Redirect to="/login" />;
+            }
+          }}
         />
 
         <Route

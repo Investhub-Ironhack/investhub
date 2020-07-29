@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { forkArticle } from "../services/articles";
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 export default class ArticleView extends Component {
   state = {
@@ -15,16 +15,20 @@ export default class ArticleView extends Component {
   handleFork = (event) => {
     const { article, user } = this.state;
 
-    forkArticle(article, user)
-      .then((response) => {
-        this.setState({
-          forkedarticleurl: `/article/edit/${response._id}`,
+    if (this.props.user) {
+      forkArticle(article, user)
+        .then((response) => {
+          this.setState({
+            forkedarticleurl: `/article/edit/${response._id}`,
+          });
+        })
+        .then(() => {
+          this.props.history.push(this.state.forkedarticleurl);
+          // this.setState({ redirect: `${this.state.forkedarticleurl}` })
         });
-      })
-      .then(() => {
-        this.props.history.push(this.state.forkedarticleurl);
-        // this.setState({ redirect: `${this.state.forkedarticleurl}` })
-      });
+    } else {
+      return this.props.history.push("/login");
+    }
   };
 
   componentDidMount() {

@@ -34,7 +34,7 @@ class Login extends Component {
         // successfully logged in
         // update the state for the parent component
         this.props.setUser(data);
-        this.props.history.push("/userPage");
+        this.props.history.push(`/userPage/${data._id}`);
       }
     });
   };
