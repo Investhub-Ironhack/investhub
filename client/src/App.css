@@ -12,6 +12,14 @@ body {
   min-height: 100vh;
 }
 
+textarea {
+  border: 1px solid #6c63ff;
+  color: #444083;
+  border-radius: 5px;
+  resize: none;
+  font-family: Roboto;
+}
+
 .App {
   text-align: center;
 }
@@ -90,6 +98,46 @@ body {
   margin-bottom: 20px;
 }
 
+.form-add-article {
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  align-content: center;
+  justify-content: center;
+}
+.form-add-article {
+  width: 70%;
+  max-width: 600px;
+}
+
+.find-form :nth-child(n) {
+  height: 40px;
+  margin: 5px;
+}
+.form-add-article :nth-child(n) {
+  margin-top: 5px;
+}
+
+.btn-apply {
+  font-size: 1.1rem;
+  background: #00a713;
+  color: #fff;
+  padding: 5px 50px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.btn-primary {
+  font-size: 1.1rem;
+  background: #00a713;
+  color: #fff;
+  padding: 10px 75px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
 .login-page {
   display: flex;
   flex-direction: column;
@@ -153,16 +201,16 @@ body {
   text-align: center;
 }
 
-.stock{
+.stock {
   display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
   align-content: center;
   align-items: stretch;
 }
 
-#technical-analysis iframe{
+#technical-analysis iframe {
   min-height: 800px;
   max-width: 80%;
 }
@@ -170,22 +218,7 @@ body {
 #mySymbolInfoContainer {
   display: flex;
   justify-content: center;
-	align-items: center;
- 
-}
-
-
-.footer {
-  margin-top: 10px;
-  width: 100%;
-  background: #3f3d56;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
-  width: 100%;
-  position: static;
-  bottom: 0;
 }
 
 .input-text {
@@ -193,6 +226,7 @@ body {
   border-radius: 5px;
   width: 100%;
   border: 0;
+  margin: 8px;
   padding: 10px;
   box-sizing: border-box;
   font-size: 1.1rem;
@@ -233,7 +267,6 @@ body {
   color: white;
   width: 80%;
   border: 0;
-  margin: 15px 0 15px;
   padding: 10px;
   box-sizing: border-box;
   font-size: 14px;
@@ -297,6 +330,19 @@ body {
 .signin-page h3,
 h1 {
   color: #3f3d56;
+}
+
+.footer {
+  margin-top: 10px;
+  width: 100%;
+  background: #3f3d56;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: static;
+  bottom: 0;
 }
 
 .footer-logo {

@@ -27,7 +27,11 @@ export default class Feed extends Component {
                 className="feed-link"
                 to={`/userpage/${article.author[0]._id}`}
               >
-                <img className="feed-image" src={article.author[0].avatarUrl} />
+                <img
+                  className="feed-image"
+                  src={article.author[0].avatarUrl}
+                  alt="author's avatar"
+                />
                 {article.author[0].username}
               </Link>
               <Link className="feed-article" to={`/article/${article._id}`}>
