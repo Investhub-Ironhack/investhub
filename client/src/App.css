@@ -12,6 +12,79 @@ body {
   min-height: 100vh;
 }
 
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  font-size: 1.2rem;
+  max-width: 400px;
+  display: flex;
+}
+
+.hero-title {
+  font-size: 1.7rem;
+  margin: 5px;
+  text-align: center;
+}
+
+.btn-primary {
+  font-size: 1.1rem;
+  background: #3ca767;
+  color: #fff;
+  padding: 10px 75px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 5px;
+}
+.btn-icon {
+  height: 20px;
+}
+
+.btn-linked {
+  font-size: 1.1rem;
+  color: #6c63ff;
+  margin-right: 5px;
+  text-decoration: underline;
+}
+
+.index-ilustration {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-hero-index {
+  text-align: center;
+}
+
+@media (min-width: 825px) {
+  .img-index {
+    width: 500px;
+  }
+}
 textarea {
   border: 1px solid #6c63ff;
   color: #444083;
@@ -218,6 +291,16 @@ textarea {
 #mySymbolInfoContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  margin-top: 10px;
+  width: 100%;
+  background: #3f3d56;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 

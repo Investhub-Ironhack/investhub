@@ -13,7 +13,10 @@ import UserPage from "./components/UserPage";
 import ArticleView from "./components/ArticleView";
 import ArticleEdit from "./components/ArticleEdit";
 import Feed from "./components/Feed";
+import LandingPage from "./components/LandingPage";
 // import Article from "../../models/Article";
+
+// import deskImage from "./images/working-desk.png";
 
 class App extends Component {
   state = {
@@ -30,7 +33,13 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar user={this.state.user} setUser={this.setUser} />
-        <Route exact path="/" render={() => <h1>Home Page</h1>} />
+
+        <Route
+          exact
+          path="/"
+          render={(props) => <LandingPage user={this.state.user} />}
+        />
+
         <Route
           exact
           path="/article"
