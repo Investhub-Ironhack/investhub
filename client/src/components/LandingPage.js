@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import manImage from "../images/walking-man.png";
-import arrowRight from "../images/arrow-right.png";
+// import arrowRight from "../images/arrow-right.png";
 
 // import deskImage from "./images/working-desk.png";
 
