@@ -19,7 +19,7 @@ const postArticle = (title, content, category, author) => {
 const forkArticle = (article, user) => {
   return axios
     .post("/api/articles/postArticle", {
-      title: article.title + `(${user.username})`,
+      title: article.title + " ├< " + `(${user.username})`,
       content: article.content,
       category: article.category,
       author: user,
