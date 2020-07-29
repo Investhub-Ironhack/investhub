@@ -34,9 +34,12 @@ export default class Feed extends Component {
                 />
                 {article.author[0].username}
               </Link>
-              <Link className="feed-article" to={`/article/${article._id}`}>
-                {article.title}
-              </Link>
+              <div className="articleandcat">
+                <span className="category-feed">{article.category}</span>
+                <Link className="feed-article" to={`/article/${article._id}`}>
+                  {article.title}
+                </Link>
+              </div>
             </div>
           );
         })}

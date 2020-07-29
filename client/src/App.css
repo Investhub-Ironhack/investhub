@@ -57,6 +57,7 @@ body {
   align-content: center;
   margin: 5px;
 }
+
 .btn-icon {
   height: 20px;
 }
@@ -85,6 +86,7 @@ body {
     width: 500px;
   }
 }
+
 textarea {
   border: 1px solid #6c63ff;
   color: #444083;
@@ -178,6 +180,7 @@ textarea {
   align-content: center;
   justify-content: center;
 }
+
 .form-add-article {
   width: 70%;
   max-width: 600px;
@@ -187,6 +190,7 @@ textarea {
   height: 40px;
   margin: 5px;
 }
+
 .form-add-article :nth-child(n) {
   margin-top: 5px;
 }
@@ -487,8 +491,12 @@ h1 {
 
 .feed-article {
   color: #3f3d56;
-  font-size: 30px;
+  /* font-size: 30px; */
   right: 30px;
+  text-align: justify;
+  margin: 70px;
+  font-size: 30px;
+
 }
 
 .article-head {
@@ -523,6 +531,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 
 .article-field {
@@ -596,4 +605,34 @@ h1 {
   border: 1px solid;
   font-size: 17px;
   border-radius: 5px;
+}
+
+.category {
+  color: goldenrod;
+  font-weight: 100;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.category-feed {
+  color: goldenrod;
+  font-weight: 100;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.articleandcat {
+  display: flex;
+  align-items: center;
+}
+
+.category-fork {
+  color: goldenrod;
+  font-weight: 100;
+  font-size: 20px;
+  margin-bottom: 300px;
+}
+
+fork-title {
+  
 }

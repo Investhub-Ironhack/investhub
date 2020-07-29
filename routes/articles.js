@@ -38,6 +38,7 @@ router.post("/postArticle", async (req, res) => {
 
 router.get("/findarticle", (req, res) => {
   Article.find()
+    .sort({ created_at: -1 })
     .populate("author")
     .then((response) => {
       res.status(200).json(response);

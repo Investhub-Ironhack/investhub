@@ -54,6 +54,7 @@ export default class ArticleEdit extends Component {
         <div class-name="edit">
           <div className="article-head">
             <h1 className="feed-title">{this.state.article.title}</h1>
+            <span className="category-fork">{this.state.article.category}</span>
           </div>
           <form className="article-form" onSubmit={this.handleSubmit}>
             {/* <textarea
