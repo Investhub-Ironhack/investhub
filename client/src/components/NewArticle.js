@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { postArticle } from "../services/articles";
+import { Editor } from "@tinymce/tinymce-react";
 
 export default class NewArticle extends Component {
   state = {
@@ -65,7 +66,7 @@ export default class NewArticle extends Component {
               <option value="Due-Diligence">Due Diligence</option>
             </select>
 
-            <textarea
+            {/* <textarea
               className="input-text"
               type="text"
               name="content"
@@ -75,6 +76,27 @@ export default class NewArticle extends Component {
               placeholder="Your Article:"
               cols="10"
               rows="20"
+            /> */}
+
+            <Editor
+              initialValue="<p></p>"
+              init={{
+                icon:"jam",
+                height: 500,
+                skin: "fabric",
+                content_css: "document",
+                menubar: true,
+                resize: true,
+                plugins: [
+                  "advlist autolink lists link image",
+                  "charmap print preview anchor help",
+                  "searchreplace visualblocks code",
+                  "insertdatetime media table paste wordcount",
+                ],
+                toolbar:
+                  "undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | link image | code",
+              }}
+              onChange={this.handleEditorChange}
             />
 
             {this.state.message && <span>{this.state.message}</span>}
