@@ -41,6 +41,7 @@ router.get("/findarticle", (req, res) => {
     .sort({ created_at: -1 })
     .populate("author")
     .then((response) => {
+      console.log(response);
       res.status(200).json(response);
     })
     .catch((err) => {
