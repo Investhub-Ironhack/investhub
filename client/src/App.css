@@ -633,6 +633,21 @@ h1 {
   margin-bottom: 300px;
 }
 
-fork-title {
-  
+.table-row td {
+  border-top: 2px solid #3f3d5652;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.table {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.table-text {
+  /* text-justify: newspaper; */
+  padding: none;
+  margin: none;
+  line-height: 50px;
+  font-size: 30px;
 }
