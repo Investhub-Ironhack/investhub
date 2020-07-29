@@ -38,20 +38,20 @@ export default class NewArticle extends Component {
     return (
       <div>
         <div className="new">
-          <h1>Write a new article !</h1>
-          <form className="article-new" onSubmit={this.handleSubmit}>
+          <h1>Write a new article!</h1>
+          <form className="form-add-article" onSubmit={this.handleSubmit}>
             <input
-              className="new-title"
+              className="input-text"
               type="text"
               name="title"
               value={this.state.title}
               onChange={this.handleChange}
               id="title"
-              placeholder="Add a title..."
+              placeholder="Title"
             />
 
             <select
-              className="new-category"
+              className="input-text"
               name="category"
               onChange={this.handleChange}
               id="category"
@@ -66,19 +66,23 @@ export default class NewArticle extends Component {
             </select>
 
             <textarea
-              className="new-content"
+              className="input-text"
               type="text"
               name="content"
               value={this.state.content}
               onChange={this.handleChange}
               id="content"
-              placeholder="...and write some content."
+              placeholder="Your Article:"
+              cols="10"
+              rows="20"
             />
 
             {this.state.message && <span>{this.state.message}</span>}
-            <button className="submit-button" type="submit">
-              Submit
-            </button>
+            <div>
+              <button className="btn-primary" type="submit">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>

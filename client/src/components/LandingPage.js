@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import manImage from "../images/walking-man.png";
+import arrowRight from "../images/arrow-right.png";
 
 // import deskImage from "./images/working-desk.png";
 
@@ -19,11 +20,16 @@ class LandingPage extends Component {
             one place for you.
           </p>
           <a class="btn-primary" href="/auth/login">
-            Enter The Club
+            Enter the Platform
           </a>
           <div class="btn-group">
             <a class="btn-linked" href="/auth/signup">
-              Already a Member?
+              Not a Member yet?
+              {/* <img
+                class="img-index"
+                src={arrowRight}
+                alt="arrow pointing to the right"
+              /> */}
             </a>
             {/* <img class="btn-icon" src={deskImage} alt="" /> */}
           </div>
