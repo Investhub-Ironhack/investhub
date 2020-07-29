@@ -49,7 +49,8 @@ export default class ArticleView extends Component {
       <>
         <div className="feed">
           <div className="article-head">
-            <h1 classname="feed-title">{this.state.article.title}</h1>
+            <h1 classname="fork-title">{this.state.article.title}</h1>
+            <h2 className="category">{this.state.article.category}</h2>
             <button className="fork-button" onClick={this.handleFork}>
               Fork
             </button>
