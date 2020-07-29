@@ -20,29 +20,35 @@ export default class Feed extends Component {
     return (
       <>
         <h1 className="feed-title">Your daily articles and analysis</h1>
-        {this.state.articles.map((article) => {
-          return (
-            <div class="feed-el">
-              <Link
-                className="feed-link"
-                to={`/userpage/${article.author[0]._id}`}
-              >
-                <img
-                  className="feed-image"
-                  src={article.author[0].avatarUrl}
-                  alt="author's avatar"
-                />
-                {article.author[0].username}
-              </Link>
-              <div className="articleandcat">
-                <span className="category-feed">{article.category}</span>
-                <Link className="feed-article" to={`/article/${article._id}`}>
-                  {article.title}
-                </Link>
-              </div>
-            </div>
-          );
-        })}
+        <table className="table">
+          {this.state.articles.map((article) => {
+            return (
+              <tr className="table-row">
+                <td>
+                  <Link
+                    className="feed-link"
+                    to={`/userpage/${article.author[0]._id}`}
+                  >
+                    <img
+                      className="feed-image"
+                      src={article.author[0].avatarUrl}
+                      alt="author's avatar"
+                    />
+                    {article.author[0].username}
+                  </Link>
+                </td>
+                <td>
+                  <span className="category-feed">{article.category}</span>
+                </td>
+                <td className="table-text">
+                  <Link className="feed-article" to={`/article/${article._id}`}>
+                    {article.title}
+                  </Link>
+                </td>
+              </tr>
+            );
+          })}
+        </table>
       </>
     );
   }
