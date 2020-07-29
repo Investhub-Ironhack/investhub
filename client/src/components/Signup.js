@@ -33,8 +33,9 @@ class Signup extends Component {
       } else {
         // successfully logged in
         // update the state for the parent component
+        console.log("woooorking");
         this.props.setUser(data);
-        this.props.history.push("/userPage");
+        this.props.history.push(`/userPage/${data._id}`);
       }
     });
   };
@@ -76,8 +77,8 @@ class Signup extends Component {
               id="password"
             />
             {this.state.message && <div>{this.state.message}</div>}
+            <button type="submit">Sign Up</button>
           </form>
-          <button type="submit">Sign Up</button>
           <p className="message">
             Already have an account?{" "}
             <a href="/login">
