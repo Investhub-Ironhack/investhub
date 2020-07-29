@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { forkArticle } from "../services/articles";
 import { Redirect } from "react-router-dom";
+import { Editor } from "@tinymce/tinymce-react";
 
 export default class ArticleView extends Component {
   state = {
@@ -55,7 +56,24 @@ export default class ArticleView extends Component {
             </button>
           </div>
           <div className="article-box">
-            <p>{this.state.article.content}</p>
+            <div className="article-view-content"></div>
+            {/* <p>{this.state.article.content}</p> */}
+            <Editor
+              className="input-text"
+              type="text"
+              name="content"
+              value={this.state.article.content}
+              id="content"
+              placeholder="Your Article:"
+              cols="10"
+              rows="20"
+              init={{
+                skin: "fabric",
+                icon: "jam",
+                height: 600,
+                readonly: true,
+              }}
+            />
           </div>
           <button className="fork-button" onClick={this.handleFork}>
             Fork
