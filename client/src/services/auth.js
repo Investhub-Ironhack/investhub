@@ -2,7 +2,7 @@ import axios from "axios";
 
 const signup = (username, email, password) => {
   return axios
-    .post("/api/auth/signup", { username, email, password })
+    .post(`${process.env.REACT_APP_API_URL}/api/auth/signup`, { username, email, password })
     .then((response) => {
       return response.data;
     })
@@ -13,7 +13,7 @@ const signup = (username, email, password) => {
 
 const login = (username, password) => {
   return axios
-    .post("/api/auth/login", { username, password })
+    .post(`${process.env.REACT_APP_API_URL}/api/auth/login`, { username, password })
     .then((response) => {
       return response.data;
     })
@@ -24,7 +24,7 @@ const login = (username, password) => {
 
 const logout = () => {
   return axios
-    .delete("/api/auth/logout")
+    .delete(`${process.env.REACT_APP_API_URL}/api/auth/logout`)
     .then((response) => {
       return response.data;
     })
