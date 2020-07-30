@@ -26,6 +26,7 @@ export default class NewArticle extends Component {
   };
 
   handleSubmit = (event) => {
+    event.preventDefault();
     const { title, content, category, author } = this.state;
     console.log(content);
     postArticle(title, content, category, author).then((data) => {
@@ -37,6 +38,8 @@ export default class NewArticle extends Component {
           category: "",
           author: "",
         });
+      } else {
+        this.props.history.push(`/userpage/${this.props.user._id}`);
       }
     });
   };

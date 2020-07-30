@@ -45,7 +45,7 @@ class App extends Component {
           path="/article"
           render={(props) => {
             if (this.state.user) {
-              return <NewArticle user={this.state.user} />;
+              return <NewArticle {...props} user={this.state.user} />;
             } else {
               return <Redirect to="/login" />;
             }
@@ -68,7 +68,7 @@ class App extends Component {
           path="/article/edit/:id"
           render={(props) => {
             if (this.state.user) {
-              return <ArticleEdit {...props} />;
+              return <ArticleEdit {...props} user={this.state.user} />;
             } else {
               return <Redirect to="/login" />;
             }

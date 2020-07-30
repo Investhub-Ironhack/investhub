@@ -39,12 +39,15 @@ export default class ArticleEdit extends Component {
   };
 
   handleSubmit = (event) => {
+    event.preventDefault();
     const { content, article } = this.state;
     updateArticle(content, article).then((data) => {
       if (data.message) {
         this.setState({
           message: data.message,
         });
+      } else {
+        this.props.history.push(`/userpage/${this.props.user._id}`);
       }
     });
   };

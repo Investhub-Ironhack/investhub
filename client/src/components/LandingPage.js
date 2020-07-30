@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import manImage from "../images/walking-man.png";
 // import arrowRight from "../images/arrow-right.png";
@@ -19,18 +20,18 @@ class LandingPage extends Component {
             We have everything about Investing, Financial analysis & markets in
             one place for you.
           </p>
-          <a className="btn-primary" href="/login">
+          <Link className="btn-primary" to="/login">
             Enter the Platform
-          </a>
+          </Link>
           <div className="btn-group">
-            <a className="btn-linked" href="/signup">
+            <Link className="btn-linked" to="/signup">
               Not a Member yet?
               {/* <img
                 class="img-index"
                 src={arrowRight}
                 alt="arrow pointing to the right"
               /> */}
-            </a>
+            </Link>
             {/* <img class="btn-icon" src={deskImage} alt="" /> */}
           </div>
         </div>
