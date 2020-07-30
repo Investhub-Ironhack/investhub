@@ -6,7 +6,7 @@ import Login from "./components/Login";
 // import Logout from "./services/auth";
 import Profile from "./components/Profile";
 import NewArticle from "./components/NewArticle";
-import Stock from "./components/Stock";
+import Market from "./components/Market";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import UserPage from "./components/UserPage";
@@ -92,8 +92,8 @@ class App extends Component {
         />
         <Route
           exact
-          path="/stock"
-          render={(props) => <Stock setUser={this.setUser} {...props} />}
+          path="/market"
+          render={(props) => <Market setUser={this.setUser} {...props} />}
         />
 
         <Route

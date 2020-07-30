@@ -69,8 +69,8 @@ class Navbar extends Component {
             <Link className="btn" to="/article">
               Articles
             </Link>
-            <Link className="btn" to="/stock">
-              Stocks
+            <Link className="btn" to="/market">
+              Markets
             </Link>
 
             {!this.props.user && (
