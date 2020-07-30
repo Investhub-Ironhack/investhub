@@ -73,13 +73,18 @@ class Navbar extends Component {
               Stocks
             </Link>
 
-            <Link className="btn" to="/login">
-              Login
-            </Link>
+            {!this.props.user && (
+              <>
+                <Link className="btn" to="/login">
+                  Login
+                </Link>
 
-            <Link className="btn" to="/signup">
-              Signup
-            </Link>
+                <Link className="btn" to="/signup">
+                  Signup
+                </Link>
+              </>
+            )}
+
             <Link
               className="btn btn-secundary"
               to="/"
