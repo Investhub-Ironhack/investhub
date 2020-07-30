@@ -77,8 +77,8 @@ export default class ArticleEdit extends Component {
                 onEditorChange={this.handleEditorChange}
                 id="content"
                 placeholder="Your Article:"
-                cols="200"
-                rows="200"
+                cols="10"
+                rows="20"
                 init={{
                   skin: "fabric",
                   icon: "jam",
