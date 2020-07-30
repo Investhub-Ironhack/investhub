@@ -36,7 +36,7 @@ router.post("/postArticle", async (req, res) => {
   }
 });
 
-router.patch("/findarticle", (req, res) => {
+router.get("/findarticles", (req, res) => {
   console.log(`waddup`);
   Article.find()
     .sort({ created_at: -1 })

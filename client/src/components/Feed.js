@@ -9,8 +9,11 @@ export default class Feed extends Component {
 
   componentDidMount() {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/articles/findarticle`)
-      .then((response) => {console.log(response); this.setState({ articles: response.data })})
+      .get(`${process.env.REACT_APP_API_URL}/api/articles/findarticles`)
+      .then((response) => {
+        console.log(response);
+        this.setState({ articles: response.data });
+      })
       .catch((err) => {
         return err.response.message;
       });
