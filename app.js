@@ -239,8 +239,10 @@ app.use("/", require("./routes/index"));
 app.use("/", require("./routes/auth"));
 app.use("/api/articles", require("./routes/articles"));
 
-app.use((req, res) => {// If no routes match, send them the React HTML.   
-  res.sendFile(__dirname + "/client/build/index.html");
-});
+if (process.env.NODE_ENV === "production") {
+  app.use((req, res) => {    // If no routes match, send them the React HTML.    
+    res.sendFile(__dirname + "/client/build/index.html");
+  });  
+}
 
 module.exports = app;
