@@ -25,11 +25,28 @@ export default class UserPage extends Component {
   render() {
     return (
       <>
-        <h1>{this.state.user.username}</h1>
-        <img src={this.state.user.avatarUrl} alt="avatar" />
-        {this.state.articles.map((article) => {
-          return <Link to={`/article/${article._id}`}>{article.title}</Link>;
-        })}
+        <div className="user-page">
+          <div className="profile">
+            <h1>{this.state.user.username}</h1>
+            <img src={this.state.user.avatarUrl} alt="avatar" />
+          </div>
+          <table className="user-articles">
+            {this.state.articles.map((article) => {
+              return (
+                <tr>
+                  <td>
+                    <span className="category-userpage">
+                      {article.category}
+                    </span>
+                  </td>
+                  <td className="table-text">
+                    <Link to={`/article/${article._id}`}>{article.title}</Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </table>
+        </div>
       </>
     );
   }

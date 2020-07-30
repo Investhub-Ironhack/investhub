@@ -177,7 +177,7 @@ textarea {
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -496,7 +496,6 @@ h1 {
   text-align: justify;
   margin: 70px;
   font-size: 30px;
-
 }
 
 .article-head {
@@ -649,5 +648,48 @@ h1 {
   padding: none;
   margin: none;
   line-height: 50px;
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile img {
+  width: 200px;
+  margin-bottom: 35px;
+}
+
+.user-page {
+  margin-left: 80px;
+  margin-right: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-page td {
+  border-top: 2px solid #3f3d5652;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: start;
+}
+
+.category-userpage {
+  color: goldenrod;
+  font-weight: 100;
+  font-size: 20px;
+  margin-right: 105px;
+}
+
+.btn-save {
+  height: 30px;
+  width: 50px;
+  color: white;
+  background-color: rgb(16, 189, 16);
+  border: 1px solid;
+  font-size: 17px;
+  border-radius: 5px;
 }

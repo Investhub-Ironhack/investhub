@@ -37,6 +37,7 @@ export default class ArticleView extends Component {
       .get(`${process.env.REACT_APP_API_URL}/api/articles/findonearticle/${this.props.match.params.id}`)
       .then((response) => {
         this.setState({
+          displayContent: response.data.content,
           article: response.data,
         });
       })
@@ -53,13 +54,15 @@ export default class ArticleView extends Component {
             <h1 className="fork-title">{this.state.article.title}</h1>
             <h2 className="category">{this.state.article.category}</h2>
             <button className="fork-button" onClick={this.handleFork}>
-              Fork
+              Fork {console.log(this.state.displayContent)}
             </button>
           </div>
           <div className="article-box">
             <div className="article-view-content"></div>
-            {/* <p>{this.state.article.content}</p> */}
-            <Editor
+            <div
+              dangerouslySetInnerHTML={{ __html: this.state.displayContent }}
+            />
+            {/* <Editor
               className="input-text"
               type="text"
               name="content"
@@ -74,7 +77,7 @@ export default class ArticleView extends Component {
                 height: 600,
                 readonly: true,
               }}
-            />
+            /> */}
           </div>
           <button className="fork-button" onClick={this.handleFork}>
             Fork
