@@ -9,12 +9,13 @@ export default class Feed extends Component {
 
   componentDidMount() {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/articles/findarticles`)
+      .get(`/api/articles/findarticles`)
       .then((response) => {
         console.log(response);
         this.setState({ articles: response.data });
       })
       .catch((err) => {
+        console.log(err, `errors are our friends`);
         return err.response.message;
       });
   }
@@ -26,19 +27,26 @@ export default class Feed extends Component {
         <table className="table">
           <tbody>
             {this.state.articles.map((article) => {
+              console.log(article);
               return (
                 <tr className="table-row">
                   <td>
                     <Link
                       className="feed-link"
-                      to={`/userpage/${article.author[0]._id}`}
+                      to={ article.author.length
+                            &&`/userpage/${article.author[0]._id}`}
                     >
                       <img
                         className="feed-image"
-                        src={article.author[0].avatarUrl}
+                        src={
+                          article.author.length
+                            ? article.author[0].avatarUrl
+                            : null
+                        }
                         alt="author's avatar"
                       />
-                      {article.author[0].username}
+                      { article.author.length
+                            && article.author[0].username}
                     </Link>
                   </td>
                   <td>
