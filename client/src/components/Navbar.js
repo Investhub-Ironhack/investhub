@@ -84,14 +84,15 @@ class Navbar extends Component {
                 </Link>
               </>
             )}
-
-            <Link
-              className="btn btn-secundary"
-              to="/"
-              onClick={() => handleLogout(this.props)}
-            >
-              Logout
-            </Link>
+            {this.props.user && (
+              <Link
+                className="btn btn-secundary"
+                to="/"
+                onClick={() => handleLogout(this.props)}
+              >
+                Logout
+              </Link>
+            )}
           </div>
         </nav>
       </>
