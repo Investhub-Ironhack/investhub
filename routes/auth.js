@@ -79,12 +79,12 @@ router.get("/api/auth/linkedin", passport.authenticate("linkedin"));
 router.get(
   "api/auth/linkedin/callback",
   passport.authenticate("linkedin", {
-    successRedirect: "http://localhost:3000/userPage",
-    failureRedirect: "http://localhost:3000/login",
+    successRedirect: `${process.env.AUTH_URL}/userPage`,
+    failureRedirect: `${process.env.AUTH_URL}login`,
   }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect("http://localhost:3000/userPage");
+    res.redirect(`${process.env.AUTH_URL}/userPage`);
   }
 );
 
@@ -95,8 +95,8 @@ router.get("/api/auth/github", passport.authenticate("github"));
 router.get(
   "/api/auth/github/callback",
   passport.authenticate("github", {
-    successRedirect: "http://localhost:3000/userPage",
-    failureRedirect: "http://localhost:3000/login",
+    successRedirect: `${process.env.AUTH_URL}/userPage`,
+    failureRedirect: `${process.env.AUTH_URL}login`,
   })
 );
 

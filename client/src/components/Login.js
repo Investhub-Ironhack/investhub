@@ -83,7 +83,7 @@ class Login extends Component {
                 src={linkedinLogoColor}
                 alt="Linkedin's Logo"
               />
-              <a href="http://localhost:5555/api/auth/linkedin">
+              <a href="/api/auth/linkedin">
                 Login via LinkedIn
               </a>
             </div>
@@ -94,7 +94,7 @@ class Login extends Component {
                 src={githubLogoColor}
                 alt="Linkedin's Logo"
               />
-              <a href="http://localhost:5555/api/auth/github">
+              <a href="/api/auth/github">
                 Login via Github
               </a>
             </div>

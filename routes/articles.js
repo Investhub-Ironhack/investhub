@@ -5,7 +5,6 @@ const User = require("../models/User");
 
 router.post("/postArticle", async (req, res) => {
   const { title, content, category, author } = req.body;
-  console.log("is it working?");
   if (!title || title.length < 8 || title.length > 200) {
     return res.status(400).json({
       message:
@@ -37,16 +36,13 @@ router.post("/postArticle", async (req, res) => {
 });
 
 router.get("/findarticles", (req, res) => {
-  console.log(`waddup`);
   Article.find()
     .sort({ created_at: -1 })
     .populate("author")
     .then((response) => {
-      console.log(response);
       res.status(200).json(response);
     })
     .catch((err) => {
-      console.log(err);
       res.json(err);
     });
 });
