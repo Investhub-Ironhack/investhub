@@ -28,7 +28,6 @@ export default class ArticleEdit extends Component {
 
   handleEditorChange = (content, editor) => {
     this.setState({ content: content });
-    console.log("Content was updated:", content);
   };
 
   handleChange = (event) => {
