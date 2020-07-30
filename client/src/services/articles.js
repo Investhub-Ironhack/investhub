@@ -2,7 +2,7 @@ import axios from "axios";
 
 const postArticle = (title, content, category, author) => {
   return axios
-    .post("/api/articles/postArticle", {
+    .post(`${process.env.REACT_APP_API_URL}/api/articles/postArticle`, {
       title: title,
       content: content,
       category: category,
@@ -18,7 +18,7 @@ const postArticle = (title, content, category, author) => {
 
 const forkArticle = (article, user) => {
   return axios
-    .post("/api/articles/postArticle", {
+    .post(`${process.env.REACT_APP_API_URL}/api/articles/postArticle`, {
       title: article.title + "  => " + `(${user.username})`,
       content: article.content,
       category: article.category,
@@ -34,7 +34,7 @@ const forkArticle = (article, user) => {
 
 const updateArticle = (content, article) => {
   return axios
-    .post(`/api/articles/updatearticle/${article._id}`, {
+    .post(`${process.env.REACT_APP_API_URL}/api/articles/updatearticle/${article._id}`, {
       content: content,
     })
     .then((response) => {

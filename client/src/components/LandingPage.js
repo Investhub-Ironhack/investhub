@@ -12,18 +12,18 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <section class="main-content">
-        <div class="hero-text">
-          <h1 class="hero-title">Investing Made Easy</h1>
-          <p class="text-hero-index">
+      <section className="main-content">
+        <div className="hero-text">
+          <h1 className="hero-title">Investing Made Easy</h1>
+          <p className="text-hero-index">
             We have everything about Investing, Financial analysis & stocks in
             one place for you.
           </p>
-          <a class="btn-primary" href="/auth/login">
+          <a className="btn-primary" href="/auth/login">
             Enter the Platform
           </a>
-          <div class="btn-group">
-            <a class="btn-linked" href="/auth/signup">
+          <div className="btn-group">
+            <a className="btn-linked" href="/auth/signup">
               Not a Member yet?
               {/* <img
                 class="img-index"
@@ -34,8 +34,8 @@ class LandingPage extends Component {
             {/* <img class="btn-icon" src={deskImage} alt="" /> */}
           </div>
         </div>
-        <div class="index-ilustration">
-          <img class="img-index" src={manImage} alt="" />
+        <div className="index-ilustration">
+          <img className="img-index" src={manImage} alt="" />
         </div>
       </section>
     );
