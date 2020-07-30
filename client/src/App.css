@@ -297,6 +297,16 @@ textarea {
   justify-content: center;
   align-items: center;
 }
+#myCalendarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+#widget-events-container {
+  min-height: 1000px;
+}
 
 .footer {
   margin-top: 10px;

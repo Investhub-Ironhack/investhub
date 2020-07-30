@@ -5,6 +5,7 @@ class Stock extends Component {
     const symbolInfoScript = document.createElement("script");
     symbolInfoScript.src =
       "https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js";
+    symbolInfoScript.async = true;
     symbolInfoScript.innerHTML = JSON.stringify({
       symbol: "FX:EURUSD",
       width: "80%",
@@ -15,6 +16,21 @@ class Stock extends Component {
     document
       .getElementById("mySymbolInfoContainer")
       .appendChild(symbolInfoScript);
+
+    const calendarScript = document.createElement("script");
+    calendarScript.src =
+      "https://s3.tradingview.com/external-embedding/embed-widget-events.js";
+    calendarScript.async = true;
+    calendarScript.innerHTML = JSON.stringify({
+      colorTheme: "light",
+      isTransparent: false,
+      width: "90%",
+      height: "100%",
+      locale: "en",
+      importanceFilter: "-1,0,1",
+      currencyFilter: "USD,EUR,JPY,DEM,CNY,FRF,GBP",
+    });
+    document.getElementById("myCalendarContainer").appendChild(calendarScript);
 
     const graphicscript = document.createElement("script");
     graphicscript.src = "https://s3.tradingview.com/tv.js";
@@ -44,8 +60,9 @@ class Stock extends Component {
       <div className="stock">
         <div id="mySymbolInfoContainer"></div>
         <div id="myGraphContainer">
-          <div id="technical-analysis"></div>
-        </div>
+          <div id="technical-analysis"></div></div>
+        <h1>Economic Calendar</h1>
+        <div id="myCalendarContainer"></div>
       </div>
     );
   }
