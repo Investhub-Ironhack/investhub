@@ -57,9 +57,9 @@ export default class ArticleView extends Component {
               Fork {console.log(this.state.displayContent)}
             </button>
           </div>
-          <div className="article-box">
-            <div className="article-view-content"></div>
+          <div>
             <div
+              className="article-container"
               dangerouslySetInnerHTML={{ __html: this.state.displayContent }}
             />
             {/* <Editor

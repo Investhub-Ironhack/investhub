@@ -693,3 +693,11 @@ h1 {
   font-size: 17px;
   border-radius: 5px;
 }
+
+.article-container {
+  margin-top: 50px;
+  width: 640px;
+  text-align: justify;
+  font-size: 1.5em;
+  line-height: 50px;
+}
