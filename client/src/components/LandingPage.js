@@ -16,7 +16,7 @@ class LandingPage extends Component {
         <div className="hero-text">
           <h1 className="hero-title">Investing Made Easy</h1>
           <p className="text-hero-index">
-            We have everything about Investing, Financial analysis & stocks in
+            We have everything about Investing, Financial analysis & markets in
             one place for you.
           </p>
           <a className="btn-primary" href="/auth/login">

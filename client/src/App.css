@@ -278,7 +278,7 @@ textarea {
   text-align: center;
 }
 
-.stock {
+.market {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -296,6 +296,16 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#myCalendarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+#widget-events-container {
+  min-height: 1000px;
 }
 
 .footer {
