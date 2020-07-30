@@ -51,6 +51,7 @@ router.get("/findarticle/:id", (req, res) => {
   User.findById(req.params.id)
     .populate("articles")
     .then((articles) => {
+      console.log(articles);
       res.status(200).json(articles);
     })
     .catch((err) => {

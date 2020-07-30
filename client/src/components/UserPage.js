@@ -10,11 +10,13 @@ export default class UserPage extends Component {
   };
   componentDidMount() {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/articles/findarticle/${this.props.match.params.id}`)
+      .get(
+        `${process.env.REACT_APP_API_URL}/api/articles/findarticle/${this.props.match.params.id}`
+      )
       .then((response) => {
         this.setState({
           user: response.data,
-          articles: response.data.articles,
+          articles: response.data.articles.reverse(),
         });
       })
       .catch((err) => {
