@@ -226,7 +226,6 @@ app.use(
 
 //Serve static assets if in production
 if (process.env.NODE_ENV === "production") {
-  console.log(`happenind?`);
   // Serve any static files
   app.use(express.static(path.join(__dirname, "/client/build")));
   // Handle React routing, return all requests to React app
@@ -240,9 +239,10 @@ app.use("/", require("./routes/auth"));
 app.use("/api/articles", require("./routes/articles"));
 
 if (process.env.NODE_ENV === "production") {
-  app.use((req, res) => {    // If no routes match, send them the React HTML.    
+  app.use((req, res) => {
+    // If no routes match, send them the React HTML.
     res.sendFile(__dirname + "/client/build/index.html");
-  });  
+  });
 }
 
 module.exports = app;

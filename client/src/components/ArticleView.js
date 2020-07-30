@@ -34,7 +34,9 @@ export default class ArticleView extends Component {
 
   componentDidMount() {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/articles/findonearticle/${this.props.match.params.id}`)
+      .get(
+        `${process.env.REACT_APP_API_URL}/api/articles/findonearticle/${this.props.match.params.id}`
+      )
       .then((response) => {
         this.setState({
           displayContent: response.data.content,
@@ -54,7 +56,7 @@ export default class ArticleView extends Component {
             <h1 className="fork-title">{this.state.article.title}</h1>
             <h2 className="category">{this.state.article.category}</h2>
             <button className="fork-button" onClick={this.handleFork}>
-              Fork {console.log(this.state.displayContent)}
+              Fork
             </button>
           </div>
           <div>

@@ -12,7 +12,6 @@ export default class Feed extends Component {
     axios
       .get(`/api/articles/findarticles`)
       .then((response) => {
-        console.log(response);
         this.setState({ articles: response.data });
       })
       .catch((err) => {
