@@ -19,11 +19,11 @@ class LandingPage extends Component {
             We have everything about Investing, Financial analysis & markets in
             one place for you.
           </p>
-          <a className="btn-primary" href="/auth/login">
+          <a className="btn-primary" href="/login">
             Enter the Platform
           </a>
           <div className="btn-group">
-            <a className="btn-linked" href="/auth/signup">
+            <a className="btn-linked" href="/signup">
               Not a Member yet?
               {/* <img
                 class="img-index"
