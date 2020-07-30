@@ -39,7 +39,7 @@ export default class Feed extends Component {
             onChange={this.handleFilter}
             id="category"
           >
-            <option value="">all</option>
+            <option value="">All</option>
             <option value="analysis">Analysis</option>
             <option value="stocks">Stocks</option>
             <option value="options">Options</option>
@@ -51,50 +51,82 @@ export default class Feed extends Component {
             Search
           </button> */}
         </form>
-        <table className="table">
-          <tbody>
-            {this.state.articles
-              .filter((article) => article.category.includes(this.state.search))
-              .map((article) => {
-                console.log(article);
-                return (
-                  <tr className="table-row">
-                    <td>
+
+        <div>
+          {this.state.articles
+            .filter((article) => article.category.includes(this.state.search))
+            .map((article) => {
+              console.log(article);
+              return (
+                <div className="post">
+                  <div className="post-image post-image-1">
+                    <img
+                      className="post-image"
+                      src={
+                        article.author.length
+                          ? article.author[0].avatarUrl
+                          : null
+                      }
+                    />
+                  </div>
+                  <div className="post-content">
+                    <div>
                       <Link
-                        className="feed-link"
+                        className="post-author"
                         to={
                           article.author.length &&
                           `/userpage/${article.author[0]._id}`
                         }
                       >
-                        <img
-                          className="feed-image"
-                          src={
-                            article.author.length
-                              ? article.author[0].avatarUrl
-                              : null
-                          }
-                          alt="author's avatar"
-                        />
                         {article.author.length && article.author[0].username}
                       </Link>
-                    </td>
-                    <td>
-                      <span className="category-feed">{article.category}</span>
-                    </td>
-                    <td className="table-text">
-                      <Link
-                        className="feed-article"
-                        to={`/article/${article._id}`}
-                      >
-                        {article.title}
-                      </Link>
-                    </td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
+                    </div>
+                    <Link className="post-title" to={`/article/${article._id}`}>
+                      {article.title}
+                    </Link>
+                    <div class="post-excerpt">
+                      <p>{article.category}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+
+        {/* <div className="container">
+          {this.state.articles
+            .filter((article) => article.category.includes(this.state.search))
+            .map((article) => {
+              console.log(article);
+              return (
+                <div>
+                  <Link
+                    className="feed-link"
+                    to={
+                      article.author.length &&
+                      `/userpage/${article.author[0]._id}`
+                    }
+                  >
+                    <img
+                      className="feed-image"
+                      src={
+                        article.author.length
+                          ? article.author[0].avatarUrl
+                          : null
+                      }
+                      alt="author's avatar"
+                    />
+                    {article.author.length && article.author[0].username}
+                  </Link>
+                  <span className="category-feed">{article.category}</span>
+
+                  <Link className="feed-article" to={`/article/${article._id}`}>
+                    {article.title}
+                  </Link>
+                </div>
+              );
+            })}
+        </div> */}
       </>
     );
   }

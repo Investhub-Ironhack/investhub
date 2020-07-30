@@ -711,3 +711,55 @@ h1 {
   font-size: 1.5em;
   line-height: 50px;
 }
+
+.tox tox-tinymce {
+  background-color: black;
+  /* width: 100%; */
+  height: 300px;
+}
+
+.post {
+  display: flex;
+  width: 70%;
+  margin: 50px auto;
+  box-shadow: 0 5px 15px 0 #777;
+}
+
+.post-date {
+  font-size: 13px;
+  color: #bbb;
+}
+
+.post-author {
+  color: #555;
+}
+
+.post-excerpt {
+  letter-spacing: 1px;
+  line-height: 1.33;
+}
+
+.post-image {
+  position: relative;
+  flex: 0 0 40%;
+  width: auto;
+  max-width: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* img {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    position: absolute;
+  } */
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 20px 30px;
+  text-align: left;
+}

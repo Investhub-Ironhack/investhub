@@ -12,7 +12,9 @@ export default class ArticleEdit extends Component {
 
   componentDidMount() {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/articles/findonearticle/${this.props.match.params.id}`)
+      .get(
+        `${process.env.REACT_APP_API_URL}/api/articles/findonearticle/${this.props.match.params.id}`
+      )
       .then((response) => {
         this.setState({
           article: response.data,
@@ -75,8 +77,8 @@ export default class ArticleEdit extends Component {
                 onEditorChange={this.handleEditorChange}
                 id="content"
                 placeholder="Your Article:"
-                cols="10"
-                rows="20"
+                cols="200"
+                rows="200"
                 init={{
                   skin: "fabric",
                   icon: "jam",
