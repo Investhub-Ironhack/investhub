@@ -12,7 +12,7 @@ export default class NewArticle extends Component {
   };
 
   handleEditorChange = (content, editor) => {
-    this.setState({content: content})
+    this.setState({ content: content });
     console.log("Content was updated:", content);
   };
 
@@ -86,7 +86,7 @@ export default class NewArticle extends Component {
               
             /> */}
 
-             <Editor
+            <Editor
               className="input-text"
               type="text"
               name="content"
@@ -94,45 +94,70 @@ export default class NewArticle extends Component {
               id="content"
               placeholder="Your Article:"
               cols="10"
-              rows="20"              
+              rows="20"
               init={{
                 skin: "fabric",
                 icon: "jam",
                 branding: false,
-                plugins: 'print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons',
-                menubar: 'file edit view insert format tools table help',
-                toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+                plugins:
+                  "print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons autoresize",
+                menubar: "file edit view insert format tools table help",
+                toolbar_mode: "floating",
+                toolbar: [
+                  {
+                    name: "history",
+                    items: ["undo", "redo"],
+                  },
+                  {
+                    name: "formatting",
+                    items: ["bold", "italic", "underline", "strikethrough"],
+                  },
+                  {
+                    name: "alignment",
+                    items: [
+                      "alignleft",
+                      "aligncenter",
+                      "alignright",
+                      "alignjustify",
+                    ],
+                  }, {
+                    name: "preview",
+                    items:["fullscreen", "preview" ,"save", "print" ],
+                  },
+                  {
+                    name: "indentation",
+                    items: ["outdent", "indent"],
+                  }, {
+                    name: "list",
+                    items:["numlist" , "bullist"],
+                  }, {
+                    name: "color",
+                    items:["forecolor", "backcolor", "removeformat" ],
+                  }, {
+                    name: "emoticons",
+                    items:["charmap", "emoticons" ],
+                  }
+                ],
                 toolbar_sticky: true,
                 image_advtab: true,
-                link_list: [
-                  { title: 'My page 1', value: 'http://www.tinymce.com' },
-                  { title: 'My page 2', value: 'http://www.moxiecode.com' }
-                ],
-                image_list: [
-                  { title: 'My page 1', value: 'http://www.tinymce.com' },
-                  { title: 'My page 2', value: 'http://www.moxiecode.com' }
-                ],
-                image_class_list: [
-                  { title: 'None', value: '' },
-                  { title: 'Some class', value: 'class-name' }
-                ],
-                templates: [
-                  { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
-                  { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
-                  { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br /><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
-                ],
-                template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
-                template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
-                height: 600,
+                template_cdate_format:
+                  "[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]",
+                template_mdate_format:
+                  "[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]",
+                min_height: 600,
+                width: 600,
+                min_width: 600,
+                resize: false,
+                statusbar: false,
                 image_caption: true,
-                quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+                quickbars_selection_toolbar:
+                  "bold italic | quicklink h2 h3 blockquote quickimage quicktable",
                 noneditable_noneditable_class: "mceNonEditable",
-                toolbar_mode: 'sliding',
                 contextmenu: "link image imagetools table",
               }}
               onEditorChange={this.handleEditorChange}
-            /> 
-          
+            />
+
             {this.state.message && <span>{this.state.message}</span>}
             <div>
               <button className="btn-primary" type="submit">
