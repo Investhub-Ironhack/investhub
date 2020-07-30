@@ -8,6 +8,7 @@ const favicon = require("serve-favicon");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const path = require("path");
+const cors = require("cors");
 
 const bcrypt = require("bcrypt");
 const flash = require("connect-flash");
@@ -209,6 +210,7 @@ app.use(cookieParser());
 
 // Express View engine setup
 
+app.use(cors());
 app.use(
   require("node-sass-middleware")({
     src: path.join(__dirname, "public"),
@@ -223,13 +225,11 @@ app.use(
 //app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
 //Serve static assets if in production
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
+  console.log(`happenind?`);
   // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
-// Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-  });
+  app.use(express.static(path.join(__dirname, "/client/build")));
+  // Handle React routing, return all requests to React app
 }
 
 // default value for title local
@@ -238,5 +238,9 @@ app.locals.title = "InvestHub";
 app.use("/", require("./routes/index"));
 app.use("/", require("./routes/auth"));
 app.use("/api/articles", require("./routes/articles"));
+
+app.use((req, res) => {// If no routes match, send them the React HTML.   
+  res.sendFile(__dirname + "/client/build/index.html");
+});
 
 module.exports = app;

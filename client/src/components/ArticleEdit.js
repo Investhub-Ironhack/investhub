@@ -12,7 +12,7 @@ export default class ArticleEdit extends Component {
 
   componentDidMount() {
     axios
-      .get(`/api/articles/findonearticle/${this.props.match.params.id}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/articles/findonearticle/${this.props.match.params.id}`)
       .then((response) => {
         this.setState({
           article: response.data,
