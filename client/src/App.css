@@ -278,7 +278,7 @@ textarea {
   text-align: center;
 }
 
-.stock {
+.market {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Stock extends Component {
+class Market extends Component {
   componentDidMount() {
     const symbolInfoScript = document.createElement("script");
     symbolInfoScript.src =
@@ -57,7 +57,7 @@ class Stock extends Component {
 
   render() {
     return (
-      <div className="stock">
+      <div className="market">
         <div id="mySymbolInfoContainer"></div>
         <div id="myGraphContainer">
           <div id="technical-analysis"></div></div>
@@ -67,4 +67,4 @@ class Stock extends Component {
     );
   }
 }
-export default Stock;
+export default Market;
