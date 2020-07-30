@@ -177,7 +177,7 @@ textarea {
   display: flex;
   flex-direction: column;
   min-width: 250px;
-  align-content: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -682,4 +682,14 @@ h1 {
   font-weight: 100;
   font-size: 20px;
   margin-right: 105px;
+}
+
+.btn-save {
+  height: 30px;
+  width: 50px;
+  color: white;
+  background-color: rgb(16, 189, 16);
+  border: 1px solid;
+  font-size: 17px;
+  border-radius: 5px;
 }
