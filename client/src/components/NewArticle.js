@@ -68,7 +68,6 @@ export default class NewArticle extends Component {
             >
               <option value="">Select a category</option>
               <option value="analysis">Analysis</option>
-              <option value="markets">Markets</option>
               <option value="stocks">Stocks</option>
               <option value="options">Options</option>
               <option value="comodities">Comodities</option>
