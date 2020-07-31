@@ -77,7 +77,7 @@ router.post("/api/auth/login", (req, res) => {
 router.get("/api/auth/linkedin", passport.authenticate("linkedin"));
 
 router.get(
-  "api/auth/linkedin/callback",
+  "/api/auth/linkedin/callback",
   passport.authenticate("linkedin", {
     successRedirect: `/feed`,
     failureRedirect: `/login`,
