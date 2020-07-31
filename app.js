@@ -107,8 +107,9 @@ passport.use(
             // no user with that githubId
             return User.create({
               githubId: profile.id,
-              displayName: profile.displayName,
+              username: profile.displayName,
               avatarUrl: profile.photos[0].value,
+
             }).then((dbUser) => {
               done(null, dbUser);
             });
