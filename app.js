@@ -172,7 +172,7 @@ passport.use(
     {
       clientID: process.env.LINKEDIN_API_KEY,
       clientSecret: process.env.LINKEDIN_SECRET_KEY,
-      callbackURL: `${process.env.AUTH_URL}/auth/linkedin/callback`,
+      callbackURL: `${process.env.AUTH_URL}/api/auth/linkedin/callback`,
     },
     (accessToken, refreshToken, profile, done) => {
       // find a user with profile.id as linkedIn or create one
@@ -185,7 +185,7 @@ passport.use(
             // no user with that linkedIn
             return User.create({
               linkedinId: profile.id,
-              displayName: profile.displayName,
+              username: profile.displayName,
               avatarUrl: profile.photos[0].value,
             }).then((dbUser) => {
               done(null, dbUser);
