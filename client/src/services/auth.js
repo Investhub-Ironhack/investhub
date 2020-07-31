@@ -33,26 +33,5 @@ const logout = () => {
     });
 };
 
-const linkdinLogin = (username, email, password) => {
-  return axios
-    .post(`${process.env.REACT_APP_API_URL}/api/auth/linkedin`, { username, email, password })
-    .then((response) => {
-      return response.data;
-    })
-    .catch((err) => {
-      return err.response.data;
-    });
-};
 
-const githubLogin = (username, email, password) => {
-  return axios
-    .post(`${process.env.REACT_APP_API_URL}/api/auth/github`, { username, email, password })
-    .then((response) => {
-      return response.data;
-    })
-    .catch((err) => {
-      return err.response.data;
-    });
-};
-
-export { signup, login, logout, linkdinLogin, githubLogin };
+export { signup, login, logout, };
