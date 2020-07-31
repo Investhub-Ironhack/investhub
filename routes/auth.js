@@ -77,15 +77,11 @@ router.post("/api/auth/login", (req, res) => {
 router.get("/api/auth/linkedin", passport.authenticate("linkedin"));
 
 router.get(
-  "api/auth/linkedin/callback",
+  "/api/auth/linkedin/callback",
   passport.authenticate("linkedin", {
-    successRedirect: `${process.env.AUTH_URL}/userPage`,
-    failureRedirect: `${process.env.AUTH_URL}login`,
-  }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect(`${process.env.AUTH_URL}/userPage`);
-  }
+    successRedirect: `/feed`,
+    failureRedirect: `/login`,
+  })
 );
 
 //Github Routes
