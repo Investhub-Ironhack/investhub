@@ -94,22 +94,26 @@ passport.use(
     {
       clientID: process.env.ID_GIT,
       clientSecret: process.env.SECRET_GIT,
-      callbackURL: `${process.env.AUTH_URL}/auth/github/callback`,
+      callbackURL: `${process.env.AUTH_URL}/api/auth/github/callback`,
     },
     (accessToken, refreshToken, profile, done) => {
       // find a user with profile.id as githubId or create one
+      console.log(1)
       User.findOne({ githubId: profile.id })
         .then((found) => {
           if (found !== null) {
             // user with that githubId already exists
+            console.log(2)
             done(null, found);
           } else {
+            console.log(3)
             // no user with that githubId
             return User.create({
               githubId: profile.id,
               displayName: profile.displayName,
               avatarUrl: profile.photos[0].value,
             }).then((dbUser) => {
+              console.log(4)
               done(null, dbUser);
             });
           }
