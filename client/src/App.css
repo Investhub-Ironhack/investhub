@@ -308,16 +308,6 @@ textarea {
   min-height: 1000px;
 }
 
-.footer {
-  margin-top: 10px;
-  width: 100%;
-  background: #3f3d56;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
 .input-text {
   background: #f2f2f2;
   width: 65%;
@@ -429,7 +419,7 @@ h1 {
 }
 
 .footer {
-  margin-top: 10px;
+  margin-top: 35px;
   width: 100%;
   background: #3f3d56;
   display: flex;
