@@ -61,6 +61,7 @@ export default class Feed extends Component {
                   <div className="post-image post-image-1">
                     <img
                       className="post-image"
+                      alt="avatar"
                       src={
                         article.author.length
                           ? article.author[0].avatarUrl
