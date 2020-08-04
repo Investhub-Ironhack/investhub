@@ -94,7 +94,7 @@ passport.use(
     {
       clientID: process.env.ID_GIT,
       clientSecret: process.env.SECRET_GIT,
-      callbackURL: `${process.env.AUTH_URL}/auth/github/callback`,
+      callbackURL: `${process.env.AUTH_URL}/api/auth/github/callback`,
     },
     (accessToken, refreshToken, profile, done) => {
       // find a user with profile.id as githubId or create one
@@ -107,8 +107,9 @@ passport.use(
             // no user with that githubId
             return User.create({
               githubId: profile.id,
-              displayName: profile.displayName,
+              username: profile.displayName,
               avatarUrl: profile.photos[0].value,
+
             }).then((dbUser) => {
               done(null, dbUser);
             });
@@ -171,7 +172,7 @@ passport.use(
     {
       clientID: process.env.LINKEDIN_API_KEY,
       clientSecret: process.env.LINKEDIN_SECRET_KEY,
-      callbackURL: `${process.env.AUTH_URL}/auth/linkedin/callback`,
+      callbackURL: `${process.env.AUTH_URL}/api/auth/linkedin/callback`,
     },
     (accessToken, refreshToken, profile, done) => {
       // find a user with profile.id as linkedIn or create one
@@ -184,7 +185,7 @@ passport.use(
             // no user with that linkedIn
             return User.create({
               linkedinId: profile.id,
-              displayName: profile.displayName,
+              username: profile.displayName,
               avatarUrl: profile.photos[0].value,
             }).then((dbUser) => {
               done(null, dbUser);
