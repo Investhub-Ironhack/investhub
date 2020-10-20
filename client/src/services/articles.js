@@ -45,4 +45,30 @@ const updateArticle = (content, article) => {
     });
 };
 
-export { postArticle, forkArticle, updateArticle };
+const likeArticle = (user, article) => {
+  return axios
+    .post(`${process.env.REACT_APP_API_URL}/api/articles/likearticle/${article._id}`, {
+      user: user,
+    })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      return err.response.data;
+    });
+};
+
+const unlikeArticle = (user, article) => {
+  return axios
+    .post(`${process.env.REACT_APP_API_URL}/api/articles/unlikearticle/${article._id}`, {
+      user: user,
+    })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((err) => {
+      return err.response.data;
+    });
+};
+
+export { postArticle, forkArticle, updateArticle, likeArticle, unlikeArticle };
