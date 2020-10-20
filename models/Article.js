@@ -5,6 +5,7 @@ const articleSchema = new Schema(
   {
     title: String,
     author: [{ type: Schema.Types.ObjectId, ref: "User" }],
+    like: Array,
     original: String,
     category: String,
     link: String,

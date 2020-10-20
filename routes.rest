@@ -1,0 +1,15 @@
+###
+PATCH http://localhost:5555/api/articles/likearticle/5f8edfb90e8daf81f4e0b820
+Content-Type: application/json
+
+{
+    "user": "TESTE 2"
+}
+
+###
+PATCH http://localhost:5555/api/articles/unlikearticle/5f8edfb90e8daf81f4e0b820
+Content-Type: application/json
+
+{
+    "user": "TESTE"
+}
