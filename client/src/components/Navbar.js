@@ -54,13 +54,13 @@ class Navbar extends Component {
 
         <nav className="navbar">
           <div className="container">
-            <a href="/">
+            <Link href="/">
               <img
                 className="navbar-logo"
                 src={investhubLogo}
                 alt="Investhub's Logo"
               />
-            </a>
+            </Link>
 
             <Link className="btn" to="/feed">
               Feed
