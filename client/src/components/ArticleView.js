@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { forkArticle } from "../services/articles";
-import { Redirect } from "react-router-dom";
-import { Editor } from "@tinymce/tinymce-react";
 
 export default class ArticleView extends Component {
   state = {

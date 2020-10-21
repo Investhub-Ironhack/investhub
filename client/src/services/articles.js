@@ -34,9 +34,12 @@ const forkArticle = (article, user) => {
 
 const updateArticle = (content, article) => {
   return axios
-    .post(`${process.env.REACT_APP_API_URL}/api/articles/updatearticle/${article._id}`, {
-      content: content,
-    })
+    .post(
+      `${process.env.REACT_APP_API_URL}/api/articles/updatearticle/${article._id}`,
+      {
+        content: content,
+      }
+    )
     .then((response) => {
       return response.data;
     })
