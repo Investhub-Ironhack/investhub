@@ -47,7 +47,7 @@ const updateArticle = (content, article) => {
 
 const likeArticle = (user, article) => {
   return axios
-    .post(`${process.env.REACT_APP_API_URL}/api/articles/likearticle/${article._id}`, {
+    .patch(`${process.env.REACT_APP_API_URL}/api/articles/likearticle/${article._id}`, {
       user: user,
     })
     .then((response) => {
@@ -60,7 +60,7 @@ const likeArticle = (user, article) => {
 
 const unlikeArticle = (user, article) => {
   return axios
-    .post(`${process.env.REACT_APP_API_URL}/api/articles/unlikearticle/${article._id}`, {
+    .patch(`${process.env.REACT_APP_API_URL}/api/articles/unlikearticle/${article._id}`, {
       user: user,
     })
     .then((response) => {
