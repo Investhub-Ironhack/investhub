@@ -55,7 +55,7 @@ export default class Feed extends Component {
           {this.state.articles
             .filter((article) => article.category.includes(this.state.search))
             .map((article) => {
-              console.log(article);
+              //console.log(article);
               return (
                 <div className="post">
                   <div className="post-image post-image-1">

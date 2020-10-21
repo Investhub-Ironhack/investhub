@@ -82,4 +82,30 @@ router.post("/updatearticle/:id", (req, res) => {
     });
 });
 
+router.patch("/likearticle/:id", (req, res) => {
+  Article.findByIdAndUpdate(
+    { _id: req.params.id },
+    { $addToSet: { like: req.body.user }}
+  )
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
+router.patch("/unlikearticle/:id", (req, res) => {
+  Article.findByIdAndUpdate(
+    { _id: req.params.id },
+    { $pull: { like: req.body.user }}
+  )
+    .then((response) => {
+      res.status(200).json(response);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
 module.exports = router;

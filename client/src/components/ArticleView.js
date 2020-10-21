@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { forkArticle } from "../services/articles";
+import { forkArticle, likeArticle, unlikeArticle } from "../services/articles";
+import { Redirect } from "react-router-dom";
+import { Editor } from "@tinymce/tinymce-react";
 
 export default class ArticleView extends Component {
   state = {
     article: this.props.match.params.id,
     user: this.props.user,
+    like: false,
+    numberOfLikes: 0,
     forkedarticleurl: "",
     redirect: null,
     message: "",
@@ -30,6 +34,22 @@ export default class ArticleView extends Component {
     }
   };
 
+  handleLike = (event) => {
+    const { article, user, like, numberOfLikes } = this.state;
+
+    if(this.props.user){
+      if(like){
+        unlikeArticle(user._id, article )
+        this.setState({like: false, numberOfLikes: numberOfLikes -1})
+      }else{
+        likeArticle(user._id, article)
+        this.setState({like: true, numberOfLikes: numberOfLikes +1})
+      }
+    }else{
+      return this.props.history.push("/login")
+    }    
+  };
+
   componentDidMount() {
     axios
       .get(
@@ -39,6 +59,8 @@ export default class ArticleView extends Component {
         this.setState({
           displayContent: response.data.content,
           article: response.data,
+          like: response.data.like.includes(this.state.user._id),
+          numberOfLikes: response.data.like.length,
         });
       })
       .catch((err) => {
@@ -58,6 +80,10 @@ export default class ArticleView extends Component {
             </button>
           </div>
           <div>
+            <button className="like-button" onClick={this.handleLike}>
+              {this.state.like ? "Unlike":"Like"}
+            </button>
+            <h3>Number of Likes {this.state.numberOfLikes}</h3>
             <div
               className="article-container"
               dangerouslySetInnerHTML={{ __html: this.state.displayContent }}
